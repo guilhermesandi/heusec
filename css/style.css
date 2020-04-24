@@ -1,11 +1,11 @@
 .header {
-    background: red;
+    background: rgb(207, 76, 76);
 }
 
 .main {
-    background: green;
+    background: rgb(80, 211, 80);
 }
 
 .footer {
-    background: blue;
+    background: rgb(76, 76, 199);
 }
