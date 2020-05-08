@@ -1,11 +1,27 @@
+/*Header*/
 .header {
-    background: rgb(207, 76, 76);
+  background: rgb(207, 76, 76);
+}
+/*Header Final*/
+
+/*Main*/
+
+.padrao {
+  height: 178.96px;
+}
+.cards {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.card {
+  border: none;
 }
 
-.main {
-    background: rgb(80, 211, 80);
-}
+/*Main Final*/
 
+/*Footer*/
 .footer {
-    background: rgb(76, 76, 199);
+  background: rgb(76, 76, 199);
 }
+/*Footer Final*/
