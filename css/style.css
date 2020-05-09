@@ -1,3 +1,27 @@
+/* Estilos gerais */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: #B24D53;
+  text-decoration: none;
+}
+/* Fim estilos gerais */
+
 /*Header*/
 .header {
   background: rgb(207, 76, 76);
@@ -22,6 +46,29 @@
 
 /*Footer*/
 .footer {
-  background: rgb(76, 76, 199);
+  background: #040505;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  color: #E0E1E7;
+}
+
+.footer h2 {
+  color: #B24D53;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.footer_copy {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.footer .contato {
+  padding-bottom: 15px;
 }
 /*Footer Final*/
+
+
+
+/* Testes */
