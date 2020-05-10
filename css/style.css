@@ -17,7 +17,7 @@ a {
 }
 
 a:hover {
-  color: #B24D53;
+  color: #b24d53;
   text-decoration: none;
 }
 /* Fim estilos gerais */
@@ -49,11 +49,11 @@ a:hover {
   background: #040505;
   padding-top: 20px;
   padding-bottom: 10px;
-  color: #E0E1E7;
+  color: #e0e1e7;
 }
 
 .footer h2 {
-  color: #B24D53;
+  color: #b24d53;
   font-size: 24px;
   text-transform: uppercase;
   font-weight: bold;
@@ -68,7 +68,5 @@ a:hover {
   padding-bottom: 15px;
 }
 /*Footer Final*/
-
-
 
 /* Testes */
