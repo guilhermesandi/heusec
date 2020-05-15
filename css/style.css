@@ -22,11 +22,29 @@ a:hover {
 }
 /* Fim estilos gerais */
 
-/*Header*/
-.header {
-  background: rgb(207, 76, 76);
-}
 /*Header Final*/
+.header{
+  margin-bottom: 10px;
+  text-align: center;
+  background: #dddddd;
+}
+
+.header_area{
+  padding: 20px;
+}
+
+.menu_area{
+  margin-top: 15px;
+}
+
+.home_pill{
+  margin-top: 15px;
+}
+/* Design - logo
+.logo{
+  width: 100px;
+  height: 100px;
+} */ 
 
 /*Main*/
 
