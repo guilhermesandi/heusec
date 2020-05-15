@@ -26,7 +26,6 @@ a:hover {
 
 .header{
   background: #040505;
-  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -34,11 +33,16 @@ a:hover {
   padding: 20px;
 }
 
+.carousel-inner{
+  padding-bottom: 20px;
+}
+
 /*Main*/
 
 .padrao {
   height: 178.96px;
 }
+
 .cards {
   padding-bottom: 20px;
   display: flex;
