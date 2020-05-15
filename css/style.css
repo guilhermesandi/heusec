@@ -22,11 +22,17 @@ a:hover {
 }
 /* Fim estilos gerais */
 
-/*Header*/
-.header {
-  background: rgb(207, 76, 76);
-}
 /*Header Final*/
+
+.header{
+  background: #040505;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.header_area{
+  padding: 20px;
+}
 
 /*Main*/
 
