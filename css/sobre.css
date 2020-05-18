@@ -1,0 +1,32 @@
+/* Main */
+.main {
+    padding-top: 60px;
+}
+
+.main h1 {
+    color: #040505;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.main p {
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.title-equipe {
+    padding-top: 60px;
+}
+
+.card-deck {
+    padding-bottom: 20px;
+}
+
+.card-deck .card {
+    background: #040505;
+    color: #e0e1e7;
+    text-align: center;
+    font-size: 18px;
+}
+/* Fim Main */
