@@ -24,16 +24,16 @@ a:hover {
 
 /*Header Final*/
 
-.header{
+.header {
   background: #040505;
   text-align: center;
 }
 
-.header_area{
+.header_area {
   padding: 20px;
 }
 
-.carousel-inner img{
+.carousel-inner img {
   height: 600px;
   padding-bottom: 20px;
 }
