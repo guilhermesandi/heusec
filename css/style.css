@@ -81,3 +81,13 @@ a:hover {
 /*Footer Final*/
 
 /* Testes */
+
+/*Login*/
+.text-info {
+  color: #b24d53 !important;
+}
+.btn-info {
+  color: black;
+  background-color: #b24d53;
+  border-color: #b24d53;
+}
