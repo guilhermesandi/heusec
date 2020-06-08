@@ -114,25 +114,25 @@ a:hover {
     display: none;
   }
   #icone {
-    font-size: 4em;
+    font-size: 2.5em;
     position: absolute;
     right: 20px;
-    border: #e0e1e7;
+    color: #b24d53;
+    z-index: 9999;
   }
   #icone-fechar {
-    font-size: 4em;
+    font-size: 2.5em;
     position: absolute;
     right: 20px;
-    border: #e0e1e7;
+    color: #b24d53;
+    z-index: 9999;
+    display: none;
   }
 
   .btn-primary {
     background-color: #b24d53 !important;
     border: #b24d53 !important;
   }
-  /*.tela-mobile li a {
-    display: none;
-  }*/
 }
 
 @media screen and (min-width: 768px) {
@@ -151,19 +151,42 @@ a:hover {
   align-content: center;
   top: 0px;
   left: 0px;
-  height: 100%;
+  height: 0%;
   width: 100%;
   z-index: 999;
+  overflow: hidden;
+  transition: height 0.5s;
 }
 
 .tela-mobile li {
   display: block;
   width: 100%;
-  padding-left: 60px;
+  padding: 10px;
   align-content: center;
 }
 
 .tela-mobile li a {
   display: block;
   text-align: center;
+}
+
+#menu-icone:checked ~ label i:last-child {
+  display: block;
+  position: fixed;
+}
+
+#menu-icone:checked ~ label i:first-child {
+  display: none;
+}
+
+#menu-icone:not(checked) ~ label i:last-child {
+  display: none;
+}
+
+#menu-icone:not(checked) ~ label i:first-child {
+  display: block;
+}
+
+#menu-icone:checked ~ ul {
+  height: 100%;
 }
