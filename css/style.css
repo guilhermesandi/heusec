@@ -47,6 +47,7 @@ a:hover {
 .cards {
   padding-bottom: 20px;
   display: flex;
+
   justify-content: center;
 }
 .card {
@@ -118,13 +119,23 @@ a:hover {
     right: 20px;
     border: #e0e1e7;
   }
+  #icone-fechar {
+    font-size: 4em;
+    position: absolute;
+    right: 20px;
+    border: #e0e1e7;
+  }
 
   .btn-primary {
     background-color: #b24d53 !important;
     border: #b24d53 !important;
   }
+  /*.tela-mobile li a {
+    display: none;
+  }*/
 }
-@media screen and (min: 768px) {
+
+@media screen and (min-width: 768px) {
   .menu-mobile {
     display: none;
   }
@@ -132,13 +143,27 @@ a:hover {
 
 /*botao menu mobile*/
 .tela-mobile {
-  background-color: #040505d0;
-  color: #b24d53;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
   display: flex;
+  position: fixed;
   flex-wrap: wrap;
   align-content: center;
   top: 0px;
   left: 0px;
-  height: 0px;
+  height: 100%;
   width: 100%;
+  z-index: 999;
+}
+
+.tela-mobile li {
+  display: block;
+  width: 100%;
+  padding-left: 60px;
+  align-content: center;
+}
+
+.tela-mobile li a {
+  display: block;
+  text-align: center;
 }
