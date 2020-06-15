@@ -1,6 +1,7 @@
 var dados = {
   noticia: [
     {
+      id: 0,
       titulo: "O que é o Antivírus? Entenda mais",
       categoria: "iniciante",
       url: "https://blog-br.softwareone.com/o-que-e-antivirus",
@@ -8,6 +9,7 @@ var dados = {
       resumo: `Entenda como funciona um antivírus e como ele pode te auxiliar no cotidiano`,
     },
     {
+      id: 1,
       titulo: "Aplicativo para Gerenciar suas senhas",
       categoria: "iniciante",
       url:
@@ -16,6 +18,7 @@ var dados = {
       resumo: `Aplicativos que podem te auxiliar a guardar senhas e logins facilitando assim sua proteção`,
     },
     {
+      id: 2,
       titulo: "Como organizar documentos para fazer backup?",
       categoria: "iniciante",
       url:
@@ -25,6 +28,7 @@ var dados = {
         "Dicas para organização na hora de fazer backups em seu computador",
     },
     {
+      id: 3,
       titulo: "Tudo sobre Phishing",
       categoria: "iniciante",
       url: "https://br.malwarebytes.com/phishing/",
@@ -32,6 +36,7 @@ var dados = {
       resumo: `O que é phishing? Tipos de phising..Como me proteger? Leia para entender um pouco mais sobre essa técnica de roubo de informações tao utilizadas no dia a dia`,
     },
     {
+      id: 4,
       titulo: "10 práticas para garantir a segurança na internet",
       categoria: "iniciante",
       url:
@@ -40,6 +45,7 @@ var dados = {
       resumo: `Dicas que te guiarão a se manter mais seguro nesse ambiente cada vez mais movimentado que é a web`,
     },
     {
+      id: 5,
       titulo: "Saiba tudo sobre botnet",
       categoria: "intermediario",
       url:
@@ -49,6 +55,7 @@ var dados = {
         "Saiba o que são as botnets e como elas podem afetar seu dia a dia.",
     },
     {
+      id: 6,
       titulo: "Cavalo de Troia",
       categoria: "intermediario",
       url: "https://www.kaspersky.com.br/resource-center/threats/trojans",
@@ -57,6 +64,7 @@ var dados = {
         "Saiba o que é, e mais importante como se proteger desse destruidor vírus.",
     },
     {
+      id: 7,
       titulo: "Como corrigir os erros java que aparecem no seu computador.",
       categoria: "intermediario",
       url:
@@ -65,6 +73,7 @@ var dados = {
       resumo: `A linguagem Java é essêncial para nosso cotidiano mas as vezes leva a aparecer alguns erros, saiba aqui como resolvê-los. `,
     },
     {
+      id: 8,
       titulo: "O que é OWASP e sua importância para segurança em aplicações",
       categoria: "intermediario",
       url: "https://blog.convisoappsec.com/owasp-e-sua-importancia/",
@@ -72,6 +81,7 @@ var dados = {
       resumo: `conheça um pouco mais sobre essa entidade muito presente no fortalecimento da segurança de software.`,
     },
     {
+      id: 9,
       titulo: "Como recuperar Pendrive corrompido",
       categoria: "intermediario",
       url: "https://hackersec.com/como-recuperar-pendrive-corrompido/",
@@ -80,6 +90,7 @@ var dados = {
         "Vamos lhe ensinar como recuperar um pendrive corrompido de forma simples usando apenas o CMD com suporte ao formato USB para NTFS e FAT32.",
     },
     {
+      id: 10,
       titulo: "O que são vírus de computador e worm de computador?",
       categoria: "intermediario",
       url:
@@ -89,6 +100,7 @@ var dados = {
         "Saiba as diferenças entre esses dois tipos de programas maliciosos",
     },
     {
+      id: 11,
       titulo: "As certificações de cibersegurança mais renomadas",
       categoria: "avancado",
       url:
@@ -98,6 +110,7 @@ var dados = {
       Listamos as certificações mais renomadas e conhecidas do mercado nacional e internacional.`,
     },
     {
+      id: 12,
       titulo: "Como configurar uma rede sem fio",
       categoria: "avancado",
       url:
@@ -106,6 +119,7 @@ var dados = {
       resumo: `Comprou um roteador novo e não quer que ninguém acesso a sua rede sem fio? Confira todos os passos simples para proteger a sua internet e as configurações presentes na maioria dos modelos que são encontrados à venda para proteger o seu sinal.`,
     },
     {
+      id: 13,
       titulo: "Desafio Hacker: o que são os CTF",
       categoria: "avancado",
       url: "https://hackersec.com/desafios-hacker-o-que-sao-os-ctf/",
@@ -114,6 +128,7 @@ var dados = {
       Cada vez mais populares os CTFs são promovidos tanto na Internet como em eventos hacker e tecnologia em todo mundo. São sempre muito disputados geralmente por jovens que estão começando na área.`,
     },
     {
+      id: 14,
       titulo: "Criptografia",
       categoria: "avancado",
       url: "https://hackersec.com/introducao-a-criptografia/",
@@ -122,6 +137,7 @@ var dados = {
         "É quase impossível falar de segurança da informação e não vir à cabeça assuntos relacionados a criptografia, isso se deve ao fato da importância em possuir sistemas com criptografia na confidencialidade das informações, e é por este motivo, que preparamos esta matéria abordando os principais conceitos e fundamentos da criptografia.",
     },
     {
+      id: 15,
       titulo: "O que é Pentest?",
       categoria: "avancado",
       url: "https://hackersec.com/o-que-e-pentest/",
@@ -141,6 +157,8 @@ onload = () => {
     login();
   }
   atualizaTela();
+  document.getElementById("logout").addEventListener("click", logout);
+  document.getElementById("favoritos").addEventListener("click", favoritos);
 };
 
 let logado = () => {
@@ -157,9 +175,9 @@ let logado = () => {
                 Olá, ${nome}
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Favoritos</a>
+                <a class="dropdown-item" href="#" id = "favoritos">Favoritos</a>
                 <a class="dropdown-item" href="#">Minha Conta</a>
-                <a class="dropdown-item" href="#">Sair</a>
+                <a class="dropdown-item" href="#" id = "logout">Sair</a>
               </div>
     `;
     logins[i].innerHTML = `Olá, ${nome}`;
@@ -181,9 +199,9 @@ let atualizaTela = () => {
   for (i = 0; i < dados.noticia.length; i++) {
     let noticia = dados.noticia[i];
 
-    texto += `<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 cards">
+    texto += `<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 cards" id="${noticia.id}">
     <div class="card" style="width: 18rem;">
-    <a href="${noticia.url}"
+    <a href="${noticia.url}" target = "_blank"
       ><img src="${noticia.img}" class="card-img-top padrao" alt="..."
     /></a>
     <div class="card-body">
@@ -201,3 +219,13 @@ let atualizaTela = () => {
   }
   tela.innerHTML = texto;
 };
+
+let logout = () => {
+  sessionStorage.removeItem("usuarioCorrente");
+  document.location.reload();
+};
+
+//let favoritos = () => {
+//document.
+
+//};
