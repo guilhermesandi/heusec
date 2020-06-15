@@ -53,6 +53,9 @@ a:hover {
 .card {
   border: none;
 }
+.card-title {
+  justify-content: center;
+}
 
 /*Main Final*/
 
