@@ -134,9 +134,21 @@ let logado = () => {
   nome = usuarioCorrente.nome;
   console.log(usuarioCorrente.nome);
   let logins = document.querySelectorAll(".login");
+  let usuario = document.querySelectorAll(".usuario");
 
   for (i = 0; i < logins.length; i++) {
-    logins[i].innerHTML = `Olá ${nome}`;
+    usuario[i].innerHTML = `
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Olá, ${nome}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Favoritos</a>
+                <a class="dropdown-item" href="#">Minha Conta</a>
+                <a class="dropdown-item" href="#">Sair</a>
+              </div>
+    `;
+    logins[i].innerHTML = `Olá, ${nome}`;
     logins[i].setAttribute("href", "usuario.html");
   }
 };
