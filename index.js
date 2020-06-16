@@ -150,15 +150,24 @@ var dados = {
 
 onload = () => {
   let usuarioCorrente = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
-  console.log(usuarioCorrente);
+
   if (usuarioCorrente != null) {
     logado();
+    principal();
+    document.getElementById("logout").addEventListener("click", logout);
   } else {
     login();
+    formulario();
+    document
+      .getElementById("btn-iniciante")
+      .addEventListener("click", iniciante);
+    document
+      .getElementById("btn-intermediario")
+      .addEventListener("click", intermediario);
+    document.getElementById("btn-avancado").addEventListener("click", avancado);
   }
-  atualizaTela();
-  document.getElementById("logout").addEventListener("click", logout);
-  document.getElementById("favoritos").addEventListener("click", favoritos);
+
+  //document.getElementById("favoritos").addEventListener("click", favoritos);
 };
 
 let logado = () => {
@@ -193,11 +202,54 @@ let login = () => {
   }
 };
 
-let atualizaTela = () => {
+let formulario = () => {
+  let tela = document.querySelector(".cards-main");
+  let texto = `<div class="card-deck">
+
+  <div class="card text-white bg-secondary mb-1" style="max-width: 25rem;">
+          <div class="card-header">Nivel de conhecimento: Iniciante</div>
+            <div class="card-body">
+              <h5 class="card-title">Conhecimento basico de Web</h5>
+              <p class="card-text">Você se considera um iniciante na Web, seu uso da web se baseia em leitura ocasional de e mails e notícias, não tem muita confiança ao usar a Web e tem dificuldade em navegar para achar as informações que gostaria. Nao tem uma ideia dos possiveis riscos que esta sujeito e pode facilmente ser vitima de golpes e ataques maliciosos. </p>                           
+            </div>
+            <div class="card-footer">
+              <a class="btn btn-dark" id="btn-iniciante">Começe aqui</a>
+            </div>
+      </div>
+  
+
+    <div class="card text-white bg-secondary mb-1" style="max-width: 25rem;">
+        <div class="card-header">Nivel de conhecimento: Intermediario</div>
+          <div class="card-body">
+            <h5 class="card-title">Conhecimento intermediario de Web</h5>
+            <p class="card-text">Você se considera um usuário Intermediário da Web, navega na internet várias vezes ao dia, seja para acessar redes sociais, entrar em portais de notícias, ver vídeos e até para estudar. Nao tem problema ao navegar usando ferramentas de busca e consegue achar a informação que precisa facilmente, tem uma ideia dos riscos que está correndo ao navegar na web, mas nao está ciente dos riscos mais atuais.</p>                          
+          </div>
+          <div class="card-footer">
+            <a class="btn btn-dark" id="btn-intermediario" >Começe aqui</a>
+          </div>
+    </div>
+
+    <div class="card text-white bg-secondary mb-1" style="max-width: 25rem;">
+      <div class="card-header">Nivel de conhecimento: Avancado</div>
+        <div class="card-body">
+          <h5 class="card-title">Conhecimento avancado de Web</h5>
+          <p class="card-text">Voce se considera um usuario avancado da Web, esta a todo tempo usando a internet para as mais diversas finalidades, sabe navegar de modo eficiente na Web e sempre acha a informacao que precisa. Sabe dos riscos que esta exposto e consegue identificar softwares maliciosos rapidamente, esta sempre atras de novas informacoes sobre seguranca na internet.</p>
+        </div>
+        <div class="card-footer">
+          <a class="btn btn-dark" id="btn-avancado" >Começe aqui</a>
+        </div>
+  </div>
+
+</div>`;
+
+  tela.innerHTML = texto;
+};
+
+let atualizaTela = (conteudo) => {
   let tela = document.querySelector(".cards-main");
   let texto = "";
-  for (i = 0; i < dados.noticia.length; i++) {
-    let noticia = dados.noticia[i];
+  for (i = 0; i < conteudo.length; i++) {
+    let noticia = conteudo[i];
 
     texto += `<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 cards" id="${noticia.id}">
     <div class="card" style="width: 18rem;">
@@ -229,3 +281,45 @@ let logout = () => {
 //document.
 
 //};
+
+let principal = () => {
+  let conteudo = dados.noticia;
+
+  atualizaTela(conteudo);
+};
+
+let iniciante = () => {
+  conteudo = dados.noticia;
+
+  let tela = [];
+  for (i = 0; i < dados.noticia.length; i++) {
+    if (dados.noticia[i].categoria == "iniciante") {
+      tela.push(dados.noticia[i]);
+    }
+  }
+  atualizaTela(tela);
+};
+
+let intermediario = () => {
+  conteudo = dados.noticia;
+
+  let tela = [];
+  for (i = 0; i < dados.noticia.length; i++) {
+    if (dados.noticia[i].categoria == "intermediario") {
+      tela.push(dados.noticia[i]);
+    }
+  }
+  atualizaTela(tela);
+};
+
+let avancado = () => {
+  conteudo = dados.noticia;
+
+  let tela = [];
+  for (i = 0; i < dados.noticia.length; i++) {
+    if (dados.noticia[i].categoria == "avancado") {
+      tela.push(dados.noticia[i]);
+    }
+  }
+  atualizaTela(tela);
+};
