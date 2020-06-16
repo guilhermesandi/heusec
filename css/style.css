@@ -31,6 +31,7 @@ a:hover {
 .header .navbar {
   background: #040505 !important;
   font-weight: bold;
+  padding: 15px 0px;
 }
 
 .navbar-dark .navbar-nav .nav-link {

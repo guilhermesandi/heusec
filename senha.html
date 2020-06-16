@@ -1,79 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>HEuSec</title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>HEuSec</title>
 
-    <link rel="stylesheet" href="css/style.css">
-    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
-    <script
-      src="https://kit.fontawesome.com/46060d9aa5.js" crossorigin="anonymous"></script>
-  </head>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
-  <body>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/flags.css" />
+  <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
+  <script src="https://kit.fontawesome.com/46060d9aa5.js" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
   <header class="header">
     <header class="container header">
-      <div class="row">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img src="img/logo/logobranco.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div class="col-12 header_area">
-            <div class="row">
-
-                    <!--<div class="col-12 col-sm-12 col-md-4 col-lg-2">
-
-                      <img src="imagens/logo_placeholder.png" class="logo">
-
-                    </div> -->
-
-                    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 home_pill">
-
-                      <nav class="nav nav-pills nav-fill">
-                        <a class="nav-item bg-dark text-white nav-link active" href="index.html">Home</a>
-                      </nav>
-
-                    </div>
-
-                    <div class="col-12 col-sm-10 col-md-10 col-lg-10 col-xl-10">
-                        <nav class="nav justify-content-end flex-column flex-sm-row">
-
-                        <a class=" text-white text-sm-center nav-link " href="#">Contato</a>
-                        
-                        <li class="nav-item dropdown">
-                        <a class="text-white nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Segurança
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Compras online</a>
-                            <a class="dropdown-item" href="#">Email</a>
-                            <a class="dropdown-item" href="#">Anuncios</a>
-                            <a class="droptown-item" href="senha.html">Testar senha </a>
-                          </div>
-                        </li>
-                        <a class=" text-white text-sm-center nav-link " href="#">Newsletter</a>
-                        <a class=" text-white text-sm-center nav-link " href="sobre.html">Sobre</a>                    
-                      </nav>
-                    </div>
-
-            </div>
-
-          </div>
-
-      </div>
-    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contato</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Segurança
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Compras online</a>
+                <a class="dropdown-item" href="#">Email</a>
+                <a class="dropdown-item" href="#">Anúncios</a>
+                <a class="dropdown-item" href="#">Testar senha</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Newsletter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sobre</a>
+            </li>
+            <li class="nav-item dropdown usuario">
+              <a class="nav-link login" href="#">Login | Cadastre-se</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
   </header>
-</header>
 
-<main>
-    <main class="container">
-        
-    </main>
-</main>
+  <main class="container main">
+    <div class="page-content">
+      <body>
+        <h2 style="text-align: center;">Escreva sua senha:</h2>
+        <p style="text-align: center;">
+          <!--<label>Write your password in this box</label>-->
+          <input id="password-box" type="password" onkeyup="passwordKeyPress()" /></p>
+        <p style="text-align: center;">Levaria&nbsp;<strong id="password-time">0 segundos</strong> para descobrir sua senha</p>
+        <ul style="text-align: center;" class="hsimp-checks">
+          <h2 id="iscompromised"><span style="color: #339966;">Essa senha não foi comprometida em nenhuma vialação do banco de dados!</span></h2>
+        </ul>
+        <ul style="text-align: center;" id="password-checks" class="hsimp-checks"></ul>
+        <ul>Links:
+          <li>https://haveibeenpwned.com/API/v3#Authorisation</li>
+          <li>https://passwordsecurity.info</li>
+          <li>https://github.com/technonerdz/passwordsecurity.info/blob/master/index.html</li>
+          <li>https://github.com/technonerdz/passwordsecurity.info/blob/master/js/main.js</li>
+          <li>https://github.com/technonerdz/passwordsecurity.info/blob/master/js/hsimp.min.js</li>
+          <li>https://github.com/howsecureismypassword/hsimp#license</li>
+          <li>https://howsecureismypassword.net</li>
+        </ul>
+        <script src="js/hsimp.min.js"></script>
+        <script src="js/main.js?nc=1"></script>
+      </body>
+    </div>
+  </main>
 
-<footer class="footer">
+  <footer class="footer">
     <footer class="container footer">
       <div class="row">
         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 sobre">
@@ -95,35 +109,19 @@
 
         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 redes_sociais">
           <h2>Redes Sociais</h2>
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            class="fa-stack fa-1x"
-          >
+          <a href="https://www.facebook.com" target="_blank" class="fa-stack fa-1x">
             <i class="fa fa-circle-thin fa-stack-2x"></i>
             <i class="fab fa-facebook-f fa-stack-1x"></i>
           </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            class="fa-stack fa-1x"
-          >
+          <a href="https://twitter.com" target="_blank" class="fa-stack fa-1x">
             <i class="fa fa-circle-thin fa-stack-2x"></i>
             <i class="fab fa-twitter fa-stack-1x"></i>
           </a>
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            class="fa-stack fa-1x"
-          >
+          <a href="https://www.instagram.com" target="_blank" class="fa-stack fa-1x">
             <i class="fa fa-circle-thin fa-stack-2x"></i>
             <i class="fab fa-instagram fa-stack-1x"></i>
           </a>
-          <a
-            href="https://www.github.com"
-            target="_blank"
-            class="fa-stack fa-1x"
-          >
+          <a href="https://www.github.com" target="_blank" class="fa-stack fa-1x">
             <i class="fa fa-circle-thin fa-stack-2x"></i>
             <i class="fab fa-github fa-stack-1x"></i>
           </a>
@@ -136,20 +134,15 @@
     </footer>
   </footer>
 
-  <script
-    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"
-  ></script>
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
