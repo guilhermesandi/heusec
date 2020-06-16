@@ -21,77 +21,81 @@
       src="https://kit.fontawesome.com/46060d9aa5.js"
       crossorigin="anonymous"
     ></script>
+    <script src="index.js"></script>
   </head>
 
   <body>
     <header class="header">
       <header class="container header">
-        <div class="row">
-          <div class="col-12 header_area">
-            <div class="row">
-              <!--<div class="col-12 col-sm-12 col-md-4 col-lg-2">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#"
+            ><img src="img/logo/logobranco.png" alt=""
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                      <img src="imagens/logo_placeholder.png" class="logo">
-
-                    </div> -->
-              <div
-                class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 home_pill"
-              >
-                <nav class="nav nav-pills nav-fill">
-                  <a
-                    class="nav-item bg-dark text-white nav-link active"
-                    href="index.html"
-                    >Home</a
-                  >
-                </nav>
-              </div>
-              <div
-                class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 menu_area"
-              >
-                <nav class="nav justify-content-end flex-column flex-sm-row">
-                  <a class="text-white text-sm-center nav-link" href="#"
-                    >Contato</a
-                  >
-
-                  <li class="nav-item dropdown">
-                    <a
-                      class="text-white nav-link dropdown-toggle"
-                      href="#"
-                      id="navbarDropdownMenuLink"
-                      role="button"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Segurança
-                    </a>
-                    <div
-                      class="dropdown-menu"
-                      aria-labelledby="navbarDropdownMenuLink"
-                    >
-                      <a class="dropdown-item" href="#">Compras online</a>
-                      <a class="dropdown-item" href="#">Email</a>
-                      <a class="dropdown-item" href="#">Anuncios</a>
-                    </div>
-                  </li>
-                  <a class="text-white text-sm-center nav-link" href="#"
-                    >Newsletter</a
-                  >
-                  <a
-                    class="text-white text-sm-center nav-link"
-                    href="sobre.html"
-                    >Sobre</a
-                  >
-                </nav>
-              </div>
-            </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >Contato</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Segurança
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Compras online</a>
+                  <a class="dropdown-item" href="#">Email</a>
+                  <a class="dropdown-item" href="#">Anúncios</a>
+                  <a class="dropdown-item" href="#">Testar senha</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >Newsletter</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sobre.html">Sobre</a>
+              </li>
+              <li class="nav-item dropdown usuario">
+                <a class="nav-link login" href="#">Login | Cadastre-se</a>
+              </li>
+            </ul>
           </div>
-        </div>
+        </nav>
       </header>
     </header>
 
     <div class="row carousel">
-      <div class="col-12">
+      <div class="col-xl-12 col-lg-12 col-md-12">
         <div
           id="carouselSite"
           class="carousel slide carousel-fade"
@@ -166,111 +170,7 @@
     </div>
 
     <main class="container main">
-      <div class="row cards-main">
-        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 cards">
-          <div class="card" style="width: 18rem;">
-            <a href="#"
-              ><img src="img/card-1.jpg" class="card-img-top padrao" alt="..."
-            /></a>
-            <div class="card-body">
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                architecto, reiciendis molestias aliquam aliquid veniam! Iusto
-                asperiores deserunt quae voluptatum.
-              </p>
-              <p class="more">
-                <a href="#"><small> Saber mais -></small></a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 cards">
-          <div class="card" style="width: 18rem;">
-            <a href="#"
-              ><img src="img/card-2.jpg" class="card-img-top padrao" alt="..."
-            /></a>
-            <div class="card-body">
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                reiciendis suscipit accusantium eos dignissimos adipisci
-                exercitationem vitae nulla quaerat libero.
-              </p>
-              <p class="more">
-                <a href="#"><small> Saber mais -></small></a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 cards">
-          <div class="card" style="width: 18rem;">
-            <a href="#"
-              ><img src="img/card-3.jpg" class="card-img-top padrao" alt="..."
-            /></a>
-            <div class="card-body">
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                quibusdam quidem quia ducimus ab explicabo quo unde, officia
-                optio qui!deserunt quae voluptatum.
-              </p>
-              <p class="more">
-                <a href="#"><small> Saber mais -></small></a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 cards">
-          <div class="card" style="width: 18rem;">
-            <a href="#"
-              ><img src="img/card-4.png" class="card-img-top padrao" alt="..."
-            /></a>
-            <div class="card-body">
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                quibusdam quidem quia ducimus ab explicabo quo unde, officia
-                optio qui!deserunt quae voluptatum.
-              </p>
-              <p class="more">
-                <a href="#"><small> Saber mais -></small></a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 cards">
-          <div class="card" style="width: 18rem;">
-            <a href="#"
-              ><img src="img/card-5.png" class="card-img-top padrao" alt="..."
-            /></a>
-            <div class="card-body">
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                quibusdam quidem quia ducimus ab explicabo quo unde, officia
-                optio qui!deserunt quae voluptatum.
-              </p>
-              <p class="more">
-                <a href="#"><small> Saber mais -></small></a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 cards">
-          <div class="card" style="width: 18rem;">
-            <a href="#"
-              ><img src="img/card-6.webp" class="card-img-top padrao" alt="..."
-            /></a>
-            <div class="card-body">
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                quibusdam quidem quia ducimus ab explicabo quo unde, officia
-                optio qui!deserunt quae voluptatum.
-              </p>
-              <p class="more">
-                <a href="#"><small> Saber mais -></small></a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="row cards-main"></div>
     </main>
 
     <footer class="footer">
