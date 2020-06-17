@@ -62,28 +62,17 @@
 
   <main class="container main">
     <div class="page-content">
-      <body>
-        <h2 style="text-align: center;">Escreva sua senha:</h2>
-        <p style="text-align: center;">
-          <!--<label>Write your password in this box</label>-->
-          <input id="password-box" type="password" onkeyup="passwordKeyPress()" /></p>
-        <p style="text-align: center;">Levaria&nbsp;<strong id="password-time">0 segundos</strong> para descobrir sua senha</p>
-        <ul style="text-align: center;" class="hsimp-checks">
-          <h2 id="iscompromised"><span style="color: #339966;">Essa senha não foi comprometida em nenhuma vialação do banco de dados!</span></h2>
-        </ul>
-        <ul style="text-align: center;" id="password-checks" class="hsimp-checks"></ul>
-        <ul>Links:
-          <li>https://haveibeenpwned.com/API/v3#Authorisation</li>
-          <li>https://passwordsecurity.info</li>
-          <li>https://github.com/technonerdz/passwordsecurity.info/blob/master/index.html</li>
-          <li>https://github.com/technonerdz/passwordsecurity.info/blob/master/js/main.js</li>
-          <li>https://github.com/technonerdz/passwordsecurity.info/blob/master/js/hsimp.min.js</li>
-          <li>https://github.com/howsecureismypassword/hsimp#license</li>
-          <li>https://howsecureismypassword.net</li>
-        </ul>
-        <script src="js/hsimp.min.js"></script>
-        <script src="js/main.js?nc=1"></script>
-      </body>
+      <h2 style="text-align: center;">Escreva sua senha:</h2>
+      
+      <p style="text-align: center;">
+        <input id="password-box" type="password" onkeyup="passwordKeyPress()" /></p>
+      <p style="text-align: center;">Levaria&nbsp;<strong id="password-time">0 segundos</strong> para descobrir sua
+        senha</p>
+      <ul style="text-align: center;" class="hsimp-checks">
+        <h2 id="iscompromised"><span style="color: #339966;">Essa senha não foi comprometida em nenhuma vialação do
+            banco de dados!</span></h2>
+      </ul>
+      <ul style="text-align: center;" id="password-checks" class="hsimp-checks"></ul>
     </div>
   </main>
 
@@ -143,6 +132,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+  <script src="js/hsimp.min.js"></script>
+  <script src="js/senha.js?nc=1"></script>
 </body>
 
 </html>
