@@ -41,8 +41,8 @@
 
     // configurar valores personalizados para "instantaneamente" / "para sempre"
     hsimp.setDictionary({
-        "instantly": "Immediately",
-        "forever": "Aaaaaaaaaaaaaaaages",
+        "instantly": "Imediatamente",
+        "forever": "Aaaaaaaaaaaaaaaanos",
     });
 
     // Roda o HSIMP
