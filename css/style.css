@@ -92,6 +92,10 @@ a:hover {
   padding-top: 20px;
 }
 
+.footer .sobre p {
+  margin-bottom: 1rem;;
+}
+
 .footer .contato {
   padding-bottom: 15px;
 }
