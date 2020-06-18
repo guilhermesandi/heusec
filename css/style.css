@@ -22,8 +22,7 @@ a:hover {
 }
 /* Fim estilos gerais */
 
-/*Header Final*/
-
+/*Header*/
 .header {
   background: #040505;
 }
@@ -45,6 +44,7 @@ a:hover {
 .header_area {
   padding: 20px;
 }
+/*Header Final*/
 
 .carousel-inner img {
   height: 600px;
