@@ -53,7 +53,7 @@
 
 var requestTimeout;
 function passwordKeyPress() {
-    document.getElementById("iscompromised").innerHTML = '<span style="color: #ff9900;"><img src="img/loading.gif" alt="" width="25" height="25" />&nbsp;Estamos verificando se sua senha já foi comprometida ...</span>';
+    document.getElementById("iscompromised").innerHTML = '<span style="color: #ff9900;"><img src="img/loading.gif" alt="" width="50" height="50" />&nbsp;Verificando se sua senha já foi comprometida ...</span>';
 
     clearTimeout(requestTimeout);
     requestTimeout = setTimeout(passwordmodified, 2000);
@@ -93,9 +93,9 @@ function passwordmodified() {
                             }
                         }
 
-                        document.getElementById("iscompromised").innerHTML = '<span style="color: #ff0000;">Ah não! Essa senha foi encontrada <b>' + pwnedcount + '</b> ' + timespell + ' vezes em bancos de dados de senhas comprometidas! Se essa é sua senha, você deve alterá-la imediatamente. Usar uma senha que foi violada é extremamente perigoso. <h4>Se você estiver usando essa senha em vários sites, aproveite a oportunidade para começar a usar senhas diferentes para cada site. Os invasores podem tirar proveito da reutilização de senha automatizando as tentativas de login em sua conta usando e-mails e pares de senhas violados.</h4></span>';
+                        document.getElementById("iscompromised").innerHTML = '<span style="color: #ff0000;">Essa senha foi encontrada <b>' + pwnedcount + '</b> ' + timespell + ' vezes em bancos de dados de senhas comprometidas! Se essa é sua senha, você deve alterá-la imediatamente. Usar uma senha que foi violada é extremamente perigoso. <br><br><h4>Se você estiver usando essa senha em vários sites, aproveite a oportunidade para começar a usar senhas diferentes para cada site. Invasores podem tirar proveito da reutilização de senha automatizando as tentativas de login em sua conta usando e-mails e pares de senhas violadas.</h4></span>';
                     } else {
-                        document.getElementById("iscompromised").innerHTML = '<span style="color: #339966;">Boas notícias, essa senha nunca foi violada!</span>';
+                        document.getElementById("iscompromised").innerHTML = '<span style="color: #339966;">Essa senha nunca foi violada!</span>';
                     }
                 }
             };

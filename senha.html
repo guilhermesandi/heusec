@@ -12,7 +12,7 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/flags.css" />
+  <link rel="stylesheet" href="css/senha.css" />
   <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
   <script src="https://kit.fontawesome.com/46060d9aa5.js" crossorigin="anonymous"></script>
   <script src="index.js"></script>
@@ -22,7 +22,7 @@
   <header class="header">
     <header class="container header">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><img src="img/logo/logobranco.png" alt=""></a>
+        <a class="navbar-brand" href="index.html"><img src="img/logo/logobranco.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -39,17 +39,17 @@
                 Segurança
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Compras online</a>
-                <a class="dropdown-item" href="#">Email</a>
-                <a class="dropdown-item" href="#">Anúncios</a>
-                <a class="dropdown-item" href="#">Testar senha</a>
+                <a class="dropdown-item disabled" href="#">Compras online</a>
+                <a class="dropdown-item disabled" href="#">Email</a>
+                <a class="dropdown-item disabled" href="#">Anúncios</a>
+                <a class="dropdown-item" href="senha.html">Testar senha</a>
               </div>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Newsletter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sobre</a>
+              <a class="nav-link" href="sobre.html">Sobre</a>
             </li>
             <li class="nav-item dropdown usuario">
               <a class="nav-link login" href="#">Login | Cadastre-se</a>
@@ -62,17 +62,33 @@
 
   <main class="container main">
     <div class="page-content">
-      <h2 style="text-align: center;">Escreva sua senha:</h2>
-      
-      <p style="text-align: center;">
-        <input id="password-box" type="password" onkeyup="passwordKeyPress()" /></p>
-      <p style="text-align: center;">Levaria&nbsp;<strong id="password-time">0 segundos</strong> para descobrir sua
-        senha</p>
-      <ul style="text-align: center;" class="hsimp-checks">
-        <h2 id="iscompromised"><span style="color: #339966;">Essa senha não foi comprometida em nenhuma vialação do
-            banco de dados!</span></h2>
-      </ul>
-      <ul style="text-align: center;" id="password-checks" class="hsimp-checks"></ul>
+      <h1>Segurança da senha</h1>
+      <div class="card border-success mb-3">
+        <div class="card-header bg-transparent border-success">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Escreva sua senha</span>
+            </div>
+            <input id="password-box" type="password" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default" onkeyup="passwordKeyPress()">
+          </div>
+        </div>
+        <div class="card-header bg-transparent border-success">
+          <p>Levaria&nbsp;<strong id="password-time">0 segundos</strong> para descobrir sua
+            senha</p>
+        </div>
+      </div>
+      <div class="card-body text-success">
+        <ul class="hsimp-checks">
+          <h2 id="iscompromised"><span>Essa senha não foi comprometida em nenhuma vialação do
+              banco de dados!</span></h2>
+        </ul>
+
+      </div>
+      <div class="card-footer bg-transparent border-success">
+        <ul id="password-checks" class="hsimp-checks"></ul>
+      </div>
+      <!-- Thanks Félix Giffard (technonerdz) -->
     </div>
   </main>
 
