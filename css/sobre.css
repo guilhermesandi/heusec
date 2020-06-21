@@ -30,12 +30,3 @@
   font-size: 18px;
 }
 /* Fim Main */
-
-@media screen and (max-width: 767px) {
-  .header {
-    display: none;
-  }
-  .equipe {
-    margin-left: 23px;
-  }
-}

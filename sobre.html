@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.css" />
   <title>HEuSec Sobre</title>
 
   <!-- Bootstrap -->
@@ -13,124 +12,108 @@
 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/sobre.css" />
-  <link rel="stylesheet" href="css/flags.css" />
   <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
   <script src="https://kit.fontawesome.com/46060d9aa5.js" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
 </head>
 
 <body>
   <header class="header">
     <header class="container header">
-      <div class="row">
-        <div class="col-12 header_area">
-          <div class="row">
-            <!--<div class="col-12 col-sm-12 col-md-4 col-lg-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html"><img src="img/logo/logobranco.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                      <img src="imagens/logo_placeholder.png" class="logo">
-
-                    </div> -->
-            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 home_pill">
-              <nav class="nav nav-pills nav-fill">
-                <a class="nav-item bg-dark text-white nav-link active" href="index.html">Home</a>
-              </nav>
-            </div>
-            <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 menu_area">
-              <nav class="nav justify-content-end flex-column flex-sm-row">
-                <a class="text-white text-sm-center nav-link" href="#">Contato</a>
-
-                <li class="nav-item dropdown">
-                  <a class="text-white nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Segurança
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Compras online</a>
-                    <a class="dropdown-item" href="#">Email</a>
-                    <a class="dropdown-item" href="#">Anuncios</a>
-                  </div>
-                </li>
-                <a class="text-white text-sm-center nav-link" href="#">Newsletter</a>
-                <a class="text-white text-sm-center nav-link" href="sobre.html">Sobre</a>
-              </nav>
-            </div>
-          </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contato</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Segurança
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item disabled" href="#">Compras online</a>
+                <a class="dropdown-item disabled" href="#">Email</a>
+                <a class="dropdown-item disabled" href="#">Anúncios</a>
+                <a class="dropdown-item" href="senha.html">Testar senha</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Newsletter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sobre.html">Sobre</a>
+            </li>
+            <li class="nav-item dropdown usuario">
+              <a class="nav-link login" href="#">Login | Cadastre-se</a>
+            </li>
+          </ul>
         </div>
-      </div>
+      </nav>
     </header>
   </header>
-</header>
-<nav class="menu-mobile">
-  <input type="checkbox" name="menu-icone" id="menu-icone" />
-  <label for="menu-icone"
-    ><i class="fas fa-bars" id="icone"></i
-    ><i class="far fa-times-circle" id="icone-fechar"></i
-  ></label>
-  <ul class="tela-mobile">
-    <li><a href=""> Contato</a></li>
-
-    <li><a href="#">Compras online</a></li>
-    <li><a href="#">Email</a></li>
-    <li><a href="#">Anuncios</a></li>
-    <li><a href="">Newslatter</a></li>
-    <li><a href="sobre.html">Sobre</a></li>
-  </ul>
-</nav>
 
   <main class="main container">
     <div class="row">
       <div class="col-12">
-    <h1 class="title">Sobre</h1>
-    <p>
-      Desenvolvido em equipe, por alunos da Ciência da Computação da
-      Puc-Coração Eucarístico.
-    </p>
-    <p>
-      Tem o intuito de orientar e auxiliar pessoas com pouca experiência e
-      auto confiança em tecnologia para lidarem sozinhas com um ambiente como
-      a internet.
-    </p>
-    <p>
-      Traz informações e orientações com o objetivo de tornar a navegação em
-      geral mais prazerosa e menos tensa.
-    </p>
-  </div>
+        <h1 class="title">Sobre</h1>
+        <p>
+          Desenvolvido em equipe, por alunos da Ciência da Computação da
+          Puc-Coração Eucarístico.
+        </p>
+        <p>
+          Tem o intuito de orientar e auxiliar pessoas com pouca experiência e
+          auto confiança em tecnologia para lidarem sozinhas com um ambiente como
+          a internet.
+        </p>
+        <p>
+          Traz informações e orientações com o objetivo de tornar a navegação em
+          geral mais prazerosa e menos tensa.
+        </p>
+      </div>
 
-  <div class="col-12 equipe">
-    <h1 class="title-equipe">Equipe</h1>
-    <div class="card-deck">
-      <div class="card" style="width: 18rem;">
-        <img src="img/cards-sobre/gabrielandrade.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text">Gabriel Andrade</p>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <img src="img/cards-sobre/guilhermesandi.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text">Guilherme Sandi</p>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <img src="img/cards-sobre/joaovieira.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text">João Victor Vieira</p>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <img src="img/cards-sobre/joaosegolin.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text">João Vitor Segolin</p>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <img src="img/cards-sobre/patrickoliveira.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text">Patrick Oliveira</p>
+      <div class="col-12 equipe">
+        <h1 class="title-equipe">Equipe</h1>
+        <div class="card-deck">
+          <div class="card" style="width: 18rem;">
+            <img src="img/cards-sobre/gabrielandrade.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Gabriel Andrade</p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="img/cards-sobre/guilhermesandi.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Guilherme Sandi</p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="img/cards-sobre/joaovieira.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">João Victor Vieira</p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="img/cards-sobre/joaosegolin.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">João Vitor Segolin</p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="img/cards-sobre/patrickoliveira.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Patrick Oliveira</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
   </main>
 
   <footer class="footer">
@@ -139,10 +122,9 @@
         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 sobre">
           <h2>Sobre</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-            cupiditate nobis maxime assumenda reprehenderit aspernatur
-            numquam, magnam qui repudiandae ducimus nulla rem, at eaque
-            maiores.
+            Criamos esse site com o intuito de orientar e auxiliar pessoas com pouca experiência e
+            auto confiança em tecnologia para lidarem sozinhas com um ambiente como
+            a internet.
           </p>
         </div>
 

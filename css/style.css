@@ -22,8 +22,7 @@ a:hover {
 }
 /* Fim estilos gerais */
 
-/*Header Final*/
-
+/*Header*/
 .header {
   background: #040505;
 }
@@ -31,6 +30,7 @@ a:hover {
 .header .navbar {
   background: #040505 !important;
   font-weight: bold;
+  padding: 15px 0px;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -44,6 +44,7 @@ a:hover {
 .header_area {
   padding: 20px;
 }
+/*Header Final*/
 
 .carousel-inner img {
   height: 600px;
@@ -89,6 +90,10 @@ a:hover {
 .footer_copy {
   text-align: center;
   padding-top: 20px;
+}
+
+.footer .sobre p {
+  margin-bottom: 1rem;;
 }
 
 .footer .contato {
