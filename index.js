@@ -4,7 +4,7 @@ var dados = {
       titulo: "O que é o Antivírus? Entenda mais",
       categoria: "iniciante",
       url: "https://blog-br.softwareone.com/o-que-e-antivirus",
-      img: "/img/informacao/iniciante/antivirus.png",
+      img: "img/informacao/iniciante/antivirus.png",
       resumo: `Entenda como funciona um antivírus e como ele pode te auxiliar no cotidiano`,
     },
     {
