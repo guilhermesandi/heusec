@@ -262,7 +262,7 @@ let atualizaTela = (conteudo) => {
     let noticia = conteudo[i];
 
     texto += `<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 cards" id="${noticia.id}">
-    <div class="card" style="width: 18rem;">
+    <div class="card bg-dark" style="width: 18rem;">
     <a href="${noticia.url}" target = "_blank"
       ><img src="${noticia.img}" class="card-img-top padrao" alt="..."
     /></a>

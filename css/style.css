@@ -34,7 +34,7 @@ a:hover {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .header .navbar img {
@@ -52,6 +52,9 @@ a:hover {
 }
 
 /*Main*/
+.body {
+  background-color: #131212;
+}
 
 .padrao {
   height: 178.96px;
@@ -64,7 +67,7 @@ a:hover {
   justify-content: center;
 }
 .card {
-  border: none;
+  color: #ffffff;
 }
 .card-title {
   justify-content: center;
@@ -93,7 +96,7 @@ a:hover {
 }
 
 .footer .sobre p {
-  margin-bottom: 1rem;;
+  margin-bottom: 1rem;
 }
 
 .footer .contato {
