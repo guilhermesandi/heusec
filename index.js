@@ -223,7 +223,7 @@ let formulario = () => {
               <p class="card-text">Você se considera um iniciante na Web, seu uso da web se baseia em leitura ocasional de e mails e notícias, não tem muita confiança ao usar a Web e tem dificuldade em navegar para achar as informações que gostaria. Nao tem uma ideia dos possiveis riscos que esta sujeito e pode facilmente ser vitima de golpes e ataques maliciosos. </p>                           
             </div>
             <div class="card-footer">
-              <a class="btn btn-dark btn-iniciante">Começe aqui</a>
+              <a class="btn btn-dark btn-iniciante">Comece aqui</a>
             </div>
       </div>
   
@@ -235,7 +235,7 @@ let formulario = () => {
             <p class="card-text">Você se considera um usuário Intermediário da Web, navega na internet várias vezes ao dia, seja para acessar redes sociais, entrar em portais de notícias, ver vídeos e até para estudar. Nao tem problema ao navegar usando ferramentas de busca e consegue achar a informação que precisa facilmente, tem uma ideia dos riscos que está correndo ao navegar na web, mas nao está ciente dos riscos mais atuais.</p>                          
           </div>
           <div class="card-footer">
-            <a class="btn btn-dark btn-intermediario">Começe aqui</a>
+            <a class="btn btn-dark btn-intermediario">Comece aqui</a>
           </div>
     </div>
 
@@ -246,7 +246,7 @@ let formulario = () => {
           <p class="card-text">Voce se considera um usuario avancado da Web, esta a todo tempo usando a internet para as mais diversas finalidades, sabe navegar de modo eficiente na Web e sempre acha a informacao que precisa. Sabe dos riscos que esta exposto e consegue identificar softwares maliciosos rapidamente, esta sempre atras de novas informacoes sobre seguranca na internet.</p>
         </div>
         <div class="card-footer">
-          <a class="btn btn-dark btn-avancado">Começe aqui</a>
+          <a class="btn btn-dark btn-avancado">Comece aqui</a>
         </div>
   </div>
 
