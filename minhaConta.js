@@ -60,6 +60,8 @@ let atualizaTela = (conteudo) => {
   tela.innerHTML = texto;
 };
 
+let preparaAdicionaSenha = () => {};
+
 let logout = () => {
   sessionStorage.removeItem("usuarioCorrente");
   document.location.reload();
@@ -74,4 +76,7 @@ onload = () => {
   } else {
     login();
   }
+  document
+    .getElementById("adicionaSenha")
+    .addEventListener("click", preparaAdicionaSenha);
 };
