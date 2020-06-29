@@ -43,3 +43,10 @@ a:hover {
 .header_area {
   padding: 20px;
 }
+.tituloFav,
+.tituloCofre {
+  color: #ffffff;
+}
+.body {
+  background-color: #292929;
+}
