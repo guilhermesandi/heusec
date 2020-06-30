@@ -84,10 +84,9 @@ let adicionaSenha = () => {
         <div class="modal-body">
           <h5>Endereço do site: ${endereco}</h5>
           <h5>Senha: ${senha}</h5>
-          <button onclick = "apagaSenha()">Apagar senha</button>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Fechar</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="apagaSenha()">Apagar senha</button>
         </div>
       </div>
     </div>
