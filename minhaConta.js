@@ -70,8 +70,6 @@ let adicionaSenha = () => {
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
     ${endereco}
   </button>
-  
-  
   <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">

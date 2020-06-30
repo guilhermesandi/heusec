@@ -150,6 +150,8 @@ var dados = {
 
 onload = () => {
   let usuarioCorrente = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
+  let artigos = JSON.stringify(dados);
+  localStorage.setItem("artigos", artigos);
 
   if (usuarioCorrente != null) {
     logado();
@@ -179,14 +181,31 @@ onload = () => {
   for (i = 0; i < botoes.length; i++) {
     botoes[i].addEventListener("click", avancado);
   }
-
-  //document.getElementById("favoritos").addEventListener("click", favoritos);
 };
 
 let adicionaCard = () => {
-  let vetor = dados;
-  //let novoCard = {id = ,titulo = ,categoria = ,url = ,img = ,resumo =  };
-  vetor.dados.push(novoCard);
+  let artigos = dados;
+  let id = dados.noticia.length;
+  let titulo = document.getElementById("txtTitulo").value;
+  let categoria = document.getElementById("txtCategoria").value;
+  let url = document.getElementById("txtUrl").value;
+  let imagem = document.getElementById("txtImagem").value;
+  let resumo = document.getElementById("txtResumo").value;
+
+  let novoCard = {
+    id: id,
+    titulo: titulo,
+    categoria: categoria,
+    url: url,
+    img: imagem,
+    resumo: resumo,
+  };
+  artigos.noticia.push(novoCard);
+
+  localStorage.setItem("artigos", JSON.stringify(artigos));
+  console.log(artigos);
+
+  atualizaTela(artigos.noticia);
 };
 
 let logado = () => {
@@ -195,24 +214,148 @@ let logado = () => {
 
   let logins = document.querySelectorAll(".login");
   let usuario = document.querySelectorAll(".usuario");
+  console.log(usuarioCorrente.login);
 
-  if ((usuarioCorrente.login = "admin")) {
+  if (usuarioCorrente.login == "admin") {
     for (i = 0; i < logins.length; i++) {
       usuario[i].innerHTML = `
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Olá, ${nome}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#" id = "favoritos">Favoritos</a>
-                  <a class="dropdown-item" href="minhaConta.html">Minha Conta</a>
-                  <a class="dropdown-item" href"#" id = "btn-adiciona-card">Adicionar card</a>
-                  <a class="dropdown-item" href="#" id = "logout">Sair</a>
-                </div>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      Olá, ${nome}
+    </a>
+    
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="#" id = "favoritos">Favoritos</a>
+      <a class="dropdown-item" href="minhaConta.html">Minha Conta</a>
+      
+      <a class="dropdown-item" href="#" id = "logout">Sair</a>
+    </div>
       `;
       logins[i].innerHTML = `Olá, ${nome}`;
       logins[i].setAttribute("href", "usuario.html");
     }
+    let tela = document.querySelector(".adicionaCard");
+
+    let texto = `<button
+    type="button"
+    class="btn-salvar btn btn-warning btn-primary"
+    data-toggle="modal"
+    data-target="#exampleModal"
+  >
+    Adicionar Card
+  </button>
+<div
+class="modal fade"
+id="exampleModal"
+tabindex="-1"
+role="dialog"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">
+    Digite os dados do novo Card
+  </h5>
+  <button
+    type="button"
+    class="close"
+    data-dismiss="modal"
+    aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span
+        class="input-group-text"
+        id="inputGroup-sizing-default"
+        >Titulo</span
+      >
+    </div>
+    <input
+      id="txtTitulo"
+      type="text"
+      class="form-control hsimp-level"
+    />
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span
+        class="input-group-text"
+        id="inputGroup-sizing-default"
+        >Categoria</span
+      >
+    </div>
+    <input
+      id="txtCategoria"
+      type="text"
+      class="form-control hsimp-level"
+    />
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span
+        class="input-group-text"
+        id="inputGroup-sizing-default"
+        >URL</span
+      >
+    </div>
+    <input
+      id="txtUrl"
+      type="text"
+      class="form-control hsimp-level"
+    />
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span
+        class="input-group-text"
+        id="inputGroup-sizing-default"
+        >Imagem</span
+      >
+    </div>
+    <input
+      id="txtImagem"
+      type="text"
+      class="form-control hsimp-level"
+    />
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span
+        class="input-group-text"
+        id="inputGroup-sizing-default"
+        >Resumo</span
+      >
+    </div>
+    <input
+      id="txtResumo"
+      type="text"
+      class="form-control hsimp-level"
+    />
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn" data-dismiss="modal">
+    Cancelar
+  </button>
+  <button
+    id="btn-adiciona-card"
+    type="button"
+    class="btn btn-primary"
+    data-dismiss="modal"
+  >
+    Adicionar
+  </button>
+</div>
+</div>
+</div>
+</div>`;
+    tela.innerHTML += texto;
   } else {
     for (i = 0; i < logins.length; i++) {
       usuario[i].innerHTML = `
@@ -321,13 +464,15 @@ let logout = () => {
 //};
 
 let principal = () => {
-  let conteudo = dados.noticia;
+  let Json = JSON.parse(localStorage.getItem("artigos"));
+  let conteudo = Json.noticia;
 
   atualizaTela(conteudo);
 };
 
 let iniciante = () => {
-  conteudo = dados.noticia;
+  let Json = JSON.parse(localStorage.getItem("artigos"));
+  let conteudo = Json.noticia;
 
   let tela = [];
   for (i = 0; i < dados.noticia.length; i++) {
@@ -339,7 +484,8 @@ let iniciante = () => {
 };
 
 let intermediario = () => {
-  conteudo = dados.noticia;
+  let Json = JSON.parse(localStorage.getItem("artigos"));
+  let conteudo = Json.noticia;
 
   let tela = [];
   for (i = 0; i < dados.noticia.length; i++) {
@@ -351,7 +497,8 @@ let intermediario = () => {
 };
 
 let avancado = () => {
-  conteudo = dados.noticia;
+  let Json = JSON.parse(localStorage.getItem("artigos"));
+  let conteudo = Json.noticia;
 
   let tela = [];
   for (i = 0; i < dados.noticia.length; i++) {
