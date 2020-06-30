@@ -60,44 +60,73 @@ let atualizaTela = (conteudo) => {
   tela.innerHTML = texto;
 };
 
-let adicionaSenha = () => {
-  let endereco = document.getElementById("txtEndereco").value;
-  let senha = document.getElementById("txtSenha").value;
+let salvas = []; // Array senhas salvas
+let salvarSenha = () => {
+  let endereco, senha, tela, texto;
+
+  if (localStorage.senhasSalvas == undefined) {
+    endereco = document.getElementById("txtEndereco").value;
+    senha = document.getElementById("txtSenha").value;
+
+    localStorage.setItem('senhasSalvas', JSON.stringify({ senhasSalvas: [{ endereco, senha }] }));
+  } else {
+    endereco = document.getElementById("txtEndereco").value;
+    senha = document.getElementById("txtSenha").value;
+
+    salvas = JSON.parse(localStorage.getItem('senhasSalvas'));
+
+    salvas.senhasSalvas.push({ endereco, senha });
+
+    localStorage.setItem('senhasSalvas', JSON.stringify(salvas));
+  }
+}
+
+let exibeSenhasSalvas = () => {
   let tela = document.querySelector(".cofre");
   let texto = "";
 
-  texto = `<!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
-    ${endereco}
-  </button>
+  salvas = JSON.parse(localStorage.getItem('senhasSalvas'));
   
-  
-  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Senha para o site Requisitado</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <h5>Endereço do site: ${endereco}</h5>
-          <h5>Senha: ${senha}</h5>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="apagaSenha()">Apagar senha</button>
+  for (i = 0; i < salvas.senhasSalvas.length; i++) {
+    let endereco = salvas.senhasSalvas[i].endereco;
+    let senha = salvas.senhasSalvas[i].senha;
+
+
+    texto = texto + `<!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+      ${endereco}
+    </button>
+    
+    
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Senha para o site Requisitado</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5>Endereço do site: ${endereco}</h5>
+            <h5>Senha: ${senha}</h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" value="${i}" class="btn btn-primary" data-dismiss="modal" onclick="apagaSenha(${i})">Apagar senha</button>
+          </div>
         </div>
       </div>
-    </div>
-  </div>`;
+    </div>`;
+  };
 
-  tela.innerHTML += texto;
+  tela.innerHTML = texto;
 };
 
-let apagaSenha = (e) => {
-  console.log("entrou apagar");
-  console.log(e);
+let apagaSenha = (id) => {
+  salvas = JSON.parse(localStorage.getItem('senhasSalvas'));
+  salvas.senhasSalvas.splice(id, 1);
+  localStorage.setItem('senhasSalvas', JSON.stringify(salvas));
+  exibeSenhasSalvas();
 };
 
 let logout = () => {
@@ -114,5 +143,5 @@ onload = () => {
   } else {
     login();
   }
-  document.getElementById("btnSalvar").addEventListener("click", adicionaSenha);
 };
+onload = exibeSenhasSalvas();
