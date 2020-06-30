@@ -195,7 +195,7 @@ let logado = () => {
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#" id = "favoritos">Favoritos</a>
-                <a class="dropdown-item" href="#">Minha Conta</a>
+                <a class="dropdown-item" href="minhaConta.html">Minha Conta</a>
                 <a class="dropdown-item" href="#" id = "logout">Sair</a>
               </div>
     `;
@@ -267,7 +267,7 @@ let atualizaTela = (conteudo) => {
       ><img src="${noticia.img}" class="card-img-top padrao" alt="..."
     /></a>
     <div class="card-body">
-    <h5 class="card-title">${noticia.titulo}</h5>
+    <a href="${noticia.url}"><h5 class="card-title">${noticia.titulo}</h5></a>
       <p class="card-text">
         ${noticia.resumo}
       </p>
