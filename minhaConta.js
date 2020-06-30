@@ -1,7 +1,7 @@
 let logado = () => {
   let usuarioCorrente = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
   nome = usuarioCorrente.nome;
-  console.log(usuarioCorrente.nome);
+
   let logins = document.querySelectorAll(".login");
   let usuario = document.querySelectorAll(".usuario");
 
@@ -60,7 +60,46 @@ let atualizaTela = (conteudo) => {
   tela.innerHTML = texto;
 };
 
-let preparaAdicionaSenha = () => {};
+let adicionaSenha = () => {
+  let endereco = document.getElementById("txtEndereco").value;
+  let senha = document.getElementById("txtSenha").value;
+  let tela = document.querySelector(".cofre");
+  let texto = "";
+
+  texto = `<!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+    ${endereco}
+  </button>
+  
+  
+  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Senha para o site Requisitado</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5>Endereço do site: ${endereco}</h5>
+          <h5>Senha: ${senha}</h5>
+          <button onclick = "apagaSenha()">Apagar senha</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>`;
+
+  tela.innerHTML += texto;
+};
+
+let apagaSenha = (e) => {
+  console.log("entrou apagar");
+  console.log(e);
+};
 
 let logout = () => {
   sessionStorage.removeItem("usuarioCorrente");
@@ -76,7 +115,5 @@ onload = () => {
   } else {
     login();
   }
-  document
-    .getElementById("adicionaSenha")
-    .addEventListener("click", preparaAdicionaSenha);
+  document.getElementById("btnSalvar").addEventListener("click", adicionaSenha);
 };

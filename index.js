@@ -153,6 +153,9 @@ onload = () => {
 
   if (usuarioCorrente != null) {
     logado();
+    document
+      .getElementById("btn-adiciona-card")
+      .addEventListener("click", adicionaCard);
     principal();
 
     document.getElementById("logout").addEventListener("click", logout);
@@ -180,15 +183,39 @@ onload = () => {
   //document.getElementById("favoritos").addEventListener("click", favoritos);
 };
 
+let adicionaCard = () => {
+  let vetor = dados;
+  //let novoCard = {id = ,titulo = ,categoria = ,url = ,img = ,resumo =  };
+  vetor.dados.push(novoCard);
+};
+
 let logado = () => {
   let usuarioCorrente = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
   nome = usuarioCorrente.nome;
-  console.log(usuarioCorrente.nome);
+
   let logins = document.querySelectorAll(".login");
   let usuario = document.querySelectorAll(".usuario");
 
-  for (i = 0; i < logins.length; i++) {
-    usuario[i].innerHTML = `
+  if ((usuarioCorrente.login = "admin")) {
+    for (i = 0; i < logins.length; i++) {
+      usuario[i].innerHTML = `
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Olá, ${nome}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#" id = "favoritos">Favoritos</a>
+                  <a class="dropdown-item" href="minhaConta.html">Minha Conta</a>
+                  <a class="dropdown-item" href"#" id = "btn-adiciona-card">Adicionar card</a>
+                  <a class="dropdown-item" href="#" id = "logout">Sair</a>
+                </div>
+      `;
+      logins[i].innerHTML = `Olá, ${nome}`;
+      logins[i].setAttribute("href", "usuario.html");
+    }
+  } else {
+    for (i = 0; i < logins.length; i++) {
+      usuario[i].innerHTML = `
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 Olá, ${nome}
@@ -199,8 +226,9 @@ let logado = () => {
                 <a class="dropdown-item" href="#" id = "logout">Sair</a>
               </div>
     `;
-    logins[i].innerHTML = `Olá, ${nome}`;
-    logins[i].setAttribute("href", "usuario.html");
+      logins[i].innerHTML = `Olá, ${nome}`;
+      logins[i].setAttribute("href", "usuario.html");
+    }
   }
 };
 
