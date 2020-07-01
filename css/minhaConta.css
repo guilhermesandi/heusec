@@ -21,7 +21,7 @@ a:hover {
 }
 /* Fim estilos gerais */
 
-/*Header*/
+/* Header */
 .header {
   background: #040505;
 }
@@ -49,3 +49,14 @@ a:hover {
 .body {
   background-color: #131212;
 }
+/* Fim Header */
+
+
+/* Main */
+.main {
+  padding-top: 60px;
+}
+#btnSalvar {
+  
+}
+/* Fim Main */
