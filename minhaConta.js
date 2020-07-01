@@ -67,7 +67,7 @@ let adicionaSenha = () => {
   let texto = "";
 
   texto = `<!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+  <button type="button" class="btn btn-primary align-middle" data-toggle="modal" data-target="#exampleModal1">
     ${endereco}
   </button>
   <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
