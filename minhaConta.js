@@ -105,20 +105,38 @@ let exibeSenhasSalvas = () => {
 
 
     texto = texto + `
-    <a href="#" class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
-      ${endereco}
-    </a>
-    <div class="collapse" id="collapse${i}">
-      <div class="card card-body">
-        <h5>Endereço do site: ${endereco}</h5>
-        <h5>Senha: ${senha}</h5>
-        <button type="button" value="${i}" class="btn btn-primary" data-dismiss="modal" onclick="apagaSenha(${i})">Apagar senha</button>
-      </div>
-    </div>`;
+    <li class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
+      <section>${endereco}</section>
+    </li>
+      <div class="collapse" id="collapse${i}">
+        <div class="card card-body">
+          <h5>Endereço do site: ${endereco}</h5>
+          <h5>Senha: ${senha}</h5>
+          <button type="button" value="${i}" class="btn btn-primary" data-dismiss="modal" onclick="apagaSenha(${i})">Apagar senha</button>
+        </div>
+      </div>`;
   };
 
   tela.innerHTML = texto;
 };
+
+let pesquisaSenhas = () => {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('txtBusca');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("listaSenhas");
+  li = ul.getElementsByTagName('li');
+
+  for (i = 0; i < li.length; i++) {
+    tag = li[i].getElementsByTagName("section")[0];
+    txtValue = tag.textContent || tag.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
 
 let apagaSenha = (id) => {
   salvas = JSON.parse(localStorage.getItem('senhasSalvas'));
