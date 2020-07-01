@@ -84,12 +84,20 @@ let salvarSenha = () => {
 let exibeSenhasSalvas = () => {
   let tela = document.querySelector("#listaSenhas");
   let texto = "";
-
+  let telaQt = document.querySelector("#qtSenhas");
+  let textoQt = "";
+  
   salvas = JSON.parse(localStorage.getItem('senhasSalvas'));
-
+  
   if (salvas.senhasSalvas.length === 0) {
     localStorage.removeItem('pesquisasSalvas');
   }
+  
+  let qtSenhas = salvas["senhasSalvas"].length;
+  textoQt = `
+    <p>${qtSenhas} senha(s)</p>
+  `;
+  telaQt.innerHTML = textoQt;
   
   for (i = 0; i < salvas.senhasSalvas.length; i++) {
     let endereco = salvas.senhasSalvas[i].endereco;
