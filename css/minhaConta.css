@@ -57,7 +57,7 @@ a:hover {
   padding-top: 20px;
 }
 
-.list-group-item {
+ul .list-group-item {
   cursor: pointer;
 }
 /* Fim Main */
