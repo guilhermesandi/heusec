@@ -62,20 +62,22 @@ let atualizaTela = (conteudo) => {
 
 let salvas = []; // Array senhas salvas
 let salvarSenha = () => {
-  let endereco, senha, tela, texto;
+  let endereco, login, senha, tela, texto;
 
   if (localStorage.senhasSalvas == undefined) {
     endereco = document.getElementById("txtEndereco").value;
+    login = document.getElementById("txtLogin").value;
     senha = document.getElementById("txtSenha").value;
 
-    localStorage.setItem('senhasSalvas', JSON.stringify({ senhasSalvas: [{ endereco, senha }] }));
+    localStorage.setItem('senhasSalvas', JSON.stringify({ senhasSalvas: [{ endereco, login, senha }] }));
   } else {
     endereco = document.getElementById("txtEndereco").value;
+    login = document.getElementById("txtLogin").value;
     senha = document.getElementById("txtSenha").value;
 
     salvas = JSON.parse(localStorage.getItem('senhasSalvas'));
 
-    salvas.senhasSalvas.push({ endereco, senha });
+    salvas.senhasSalvas.push({ endereco, login, senha });
 
     localStorage.setItem('senhasSalvas', JSON.stringify(salvas));
   }
@@ -101,6 +103,7 @@ let exibeSenhasSalvas = () => {
   
   for (i = 0; i < salvas.senhasSalvas.length; i++) {
     let endereco = salvas.senhasSalvas[i].endereco;
+    let login = salvas.senhasSalvas[i].login;
     let senha = salvas.senhasSalvas[i].senha;
 
 
@@ -108,13 +111,13 @@ let exibeSenhasSalvas = () => {
     <li class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
       <section>${endereco}</section>
     </li>
-      <div class="collapse" id="collapse${i}">
-        <div class="card card-body">
-          <h5>Endereço do site: ${endereco}</h5>
-          <h5>Senha: ${senha}</h5>
-          <button type="button" value="${i}" class="btn btn-primary" data-dismiss="modal" onclick="apagaSenha(${i})">Apagar senha</button>
-        </div>
-      </div>`;
+    <div class="collapse" id="collapse${i}">
+      <div class="card-informacoes card card-body">
+        <h5><strong>Login:</strong> ${login}</h5>
+        <h5><strong>Senha:</strong> ${senha}</h5>
+        <button type="button" value="${i}" class="btn btn-danger" data-dismiss="modal" onclick="apagaSenha(${i})">Apagar senha</button>
+      </div>
+    </div>`;
   };
 
   tela.innerHTML = texto;

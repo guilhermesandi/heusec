@@ -60,4 +60,21 @@ a:hover {
 ul .list-group-item {
   cursor: pointer;
 }
+
+.card {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  margin-bottom: 5px;
+  border: none;
+}
+
+.card-informacoes h5 {
+  font-size: 18px;
+}
+
+.btn-danger {
+  color: #ffffff;
+  background-color: #b24d53;
+  border-color: #b24d53;
+}
 /* Fim Main */
