@@ -82,10 +82,14 @@ let salvarSenha = () => {
 }
 
 let exibeSenhasSalvas = () => {
-  let tela = document.querySelector(".cofre");
+  let tela = document.querySelector("#listaSenhas");
   let texto = "";
 
   salvas = JSON.parse(localStorage.getItem('senhasSalvas'));
+
+  if (salvas.senhasSalvas.length === 0) {
+    localStorage.removeItem('pesquisasSalvas');
+  }
   
   for (i = 0; i < salvas.senhasSalvas.length; i++) {
     let endereco = salvas.senhasSalvas[i].endereco;
@@ -93,11 +97,11 @@ let exibeSenhasSalvas = () => {
 
 
     texto = texto + `
-    <p>
+    <li class="list-group-item">
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
         ${endereco}
       </button>
-    </p>
+    </li>
     <div class="collapse" id="collapse${i}">
       <div class="card card-body">
         <h5>Endereço do site: ${endereco}</h5>
