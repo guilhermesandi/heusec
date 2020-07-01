@@ -92,29 +92,17 @@ let exibeSenhasSalvas = () => {
     let senha = salvas.senhasSalvas[i].senha;
 
 
-    texto = texto + `<!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
-      ${endereco}
-    </button>
-    
-    
-    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Senha para o site Requisitado</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <h5>Endereço do site: ${endereco}</h5>
-            <h5>Senha: ${senha}</h5>
-          </div>
-          <div class="modal-footer">
-            <button type="button" value="${i}" class="btn btn-primary" data-dismiss="modal" onclick="apagaSenha(${i})">Apagar senha</button>
-          </div>
-        </div>
+    texto = texto + `
+    <p>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
+        ${endereco}
+      </button>
+    </p>
+    <div class="collapse" id="collapse${i}">
+      <div class="card card-body">
+        <h5>Endereço do site: ${endereco}</h5>
+        <h5>Senha: ${senha}</h5>
+        <button type="button" value="${i}" class="btn btn-primary" data-dismiss="modal" onclick="apagaSenha(${i})">Apagar senha</button>
       </div>
     </div>`;
   };
