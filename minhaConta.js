@@ -97,11 +97,9 @@ let exibeSenhasSalvas = () => {
 
 
     texto = texto + `
-    <li class="list-group-item">
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
-        ${endereco}
-      </button>
-    </li>
+    <a href="#" class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
+      ${endereco}
+    </a>
     <div class="collapse" id="collapse${i}">
       <div class="card card-body">
         <h5>Endereço do site: ${endereco}</h5>
