@@ -414,21 +414,6 @@ let logado = () => {
       class="form-control hsimp-level"
     />
   </div>
-<<<<<<< HEAD
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn" data-dismiss="modal">
-    Cancelar
-  </button>
-  <button
-    id="btn-adiciona-card"
-    type="button"
-    class="btn btn-warning"
-    data-dismiss="modal"
-  >
-    Adicionar
-  </button>
-=======
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <span
@@ -443,7 +428,6 @@ let logado = () => {
 <div class="modal-footer">
   <button id="btn-adiciona-card" type="button" class="btn btn-primary" data-dismiss="modal">Adicionar</button>
   <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
->>>>>>> master
 </div>
 </div>
 </div>
@@ -538,35 +522,6 @@ let atualizaTela = (conteudo) => {
       </div>
       <p class="more">
       <div class = "card-footer">
-<<<<<<< HEAD
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal${i}">
-  Saber mais
-</button>
-</div>
-
-<div class="modal fade" id="exampleModal${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">${noticia.titulo}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <h5>${noticia.texto}</h5>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-warning adicionaFavorito" id="${noticia.id}" onclick = "adicionaFavorito(this)"> Favoritar</button>
-      </div>
-    </div>
-  </div>
-</div>
-      </p>
-    </div>
-  </div>
-=======
         <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal${i}">Saber mais</button>
       </div>
 
@@ -595,7 +550,6 @@ let atualizaTela = (conteudo) => {
             </p>
           </div>
         </div>
->>>>>>> master
   
   
   `;
