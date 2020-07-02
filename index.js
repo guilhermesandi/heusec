@@ -226,9 +226,11 @@ onload = () => {
 
   if (usuarioCorrente != null) {
     logado();
-    document
-      .getElementById("btn-adiciona-card")
-      .addEventListener("click", adicionaCard);
+    if (usuarioCorrente.login == "admin") {
+      document
+        .getElementById("btn-adiciona-card")
+        .addEventListener("click", adicionaCard);
+    }
     principal();
 
     document.getElementById("logout").addEventListener("click", logout);
