@@ -68,12 +68,16 @@ a:hover {
 }
 
 .body h1 {
-  padding-top: 60px;
+  padding-top: 20px;
   color: white;
 }
 
 .body p {
   color: white;
+}
+
+.sobre-area {
+  padding-bottom: 50px;
 }
 
 .card-deck {
