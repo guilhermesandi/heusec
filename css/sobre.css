@@ -56,10 +56,38 @@ a:hover {
 }
 
 .main h1 {
-  color: #040505;
+  color: #ffffff;
   font-size: 24px;
   text-transform: uppercase;
+  letter-spacing: .1em;
   font-weight: bold;
+}
+
+/*.main h1:before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  background: #b24d53;
+  margin: 6px 0 2px 1px;
+}*/
+
+.main .title-sobre:before {
+  content: "";
+  display: block;
+  width: 93px;
+  height: 2px;
+  background: #b24d53;
+  margin: 6px 0 2px 1px;
+}
+
+.main .title-equipe:before {
+  content: "";
+  display: block;
+  width: 101px;
+  height: 2px;
+  background: #b24d53;
+  margin: 6px 0 2px 1px;
 }
 
 .main p {
@@ -68,12 +96,16 @@ a:hover {
 }
 
 .body h1 {
-  padding-top: 60px;
-  color: white;
+  padding-top: 20px;
+  color: #b24d53;
 }
 
 .body p {
   color: white;
+}
+
+.sobre-area {
+  padding-bottom: 50px;
 }
 
 .card-deck {
