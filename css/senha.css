@@ -119,6 +119,10 @@ p {
     font-weight: bold;
 }
 
+#password-checks {
+  color: #ffffff;
+}
+
 #password-checks li {
     margin-bottom: 20px;
 }
