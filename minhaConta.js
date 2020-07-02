@@ -30,6 +30,7 @@ let login = () => {
 
 let encontraFavoritos = () => {
   let favoritos = localStorage.getItem("favoritos");
+  console.log(favoritos);
   atualizaTela(favoritos);
 };
 
@@ -69,68 +70,49 @@ let salvarSenha = () => {
     login = document.getElementById("txtLogin").value;
     senha = document.getElementById("txtSenha").value;
 
-    localStorage.setItem('senhasSalvas', JSON.stringify({ senhasSalvas: [{ endereco, login, senha }] }));
+    localStorage.setItem(
+      "senhasSalvas",
+      JSON.stringify({ senhasSalvas: [{ endereco, login, senha }] })
+    );
   } else {
     endereco = document.getElementById("txtEndereco").value;
     login = document.getElementById("txtLogin").value;
     senha = document.getElementById("txtSenha").value;
 
-    salvas = JSON.parse(localStorage.getItem('senhasSalvas'));
+    salvas = JSON.parse(localStorage.getItem("senhasSalvas"));
 
-<<<<<<< HEAD
-  texto = `<!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary align-middle" data-toggle="modal" data-target="#exampleModal1">
-    ${endereco}
-  </button>
-  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Senha para o site Requisitado</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <h5>Endereço do site: ${endereco}</h5>
-          <h5>Senha: ${senha}</h5>
-          <button onclick = "apagaSenha()">Apagar senha</button>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Fechar</button>
-        </div>
-=======
     salvas.senhasSalvas.push({ endereco, login, senha });
 
-    localStorage.setItem('senhasSalvas', JSON.stringify(salvas));
+    localStorage.setItem("senhasSalvas", JSON.stringify(salvas));
   }
-}
+};
 
 let exibeSenhasSalvas = () => {
   let tela = document.querySelector("#listaSenhas");
   let texto = "";
   let telaQt = document.querySelector("#qtSenhas");
   let textoQt = "";
-  
-  salvas = JSON.parse(localStorage.getItem('senhasSalvas'));
-  
+
+  salvas = JSON.parse(localStorage.getItem("senhasSalvas"));
+
   if (salvas.senhasSalvas.length === 0) {
-    localStorage.removeItem('pesquisasSalvas');
+    localStorage.removeItem("pesquisasSalvas");
   }
-  
+
   let qtSenhas = salvas["senhasSalvas"].length;
   textoQt = `
     <p>${qtSenhas} senha(s)</p>
   `;
   telaQt.innerHTML = textoQt;
-  
+
   for (i = 0; i < salvas.senhasSalvas.length; i++) {
     let endereco = salvas.senhasSalvas[i].endereco;
     let login = salvas.senhasSalvas[i].login;
     let senha = salvas.senhasSalvas[i].senha;
 
-
-    texto = texto + `
+    texto =
+      texto +
+      `
     <li class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
       <section>${endereco}</section>
     </li>
@@ -139,20 +121,19 @@ let exibeSenhasSalvas = () => {
         <h5><strong>Login:</strong> ${login}</h5>
         <h5><strong>Senha:</strong> ${senha}</h5>
         <button type="button" value="${i}" class="btn btn-danger" data-dismiss="modal" onclick="apagaSenha(${i})">Apagar senha</button>
->>>>>>> master
       </div>
     </div>`;
-  };
+  }
 
   tela.innerHTML = texto;
 };
 
 let pesquisaSenhas = () => {
   var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById('txtBusca');
+  input = document.getElementById("txtBusca");
   filter = input.value.toUpperCase();
   ul = document.getElementById("listaSenhas");
-  li = ul.getElementsByTagName('li');
+  li = ul.getElementsByTagName("li");
 
   for (i = 0; i < li.length; i++) {
     tag = li[i].getElementsByTagName("section")[0];
@@ -163,12 +144,12 @@ let pesquisaSenhas = () => {
       li[i].style.display = "none";
     }
   }
-}
+};
 
 let apagaSenha = (id) => {
-  salvas = JSON.parse(localStorage.getItem('senhasSalvas'));
+  salvas = JSON.parse(localStorage.getItem("senhasSalvas"));
   salvas.senhasSalvas.splice(id, 1);
-  localStorage.setItem('senhasSalvas', JSON.stringify(salvas));
+  localStorage.setItem("senhasSalvas", JSON.stringify(salvas));
   exibeSenhasSalvas();
 };
 
@@ -181,10 +162,9 @@ onload = () => {
   let usuarioCorrente = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
   if (usuarioCorrente != null) {
     logado();
-
+    exibeSenhasSalvas();
     document.getElementById("logout").addEventListener("click", logout);
   } else {
     login();
   }
 };
-onload = exibeSenhasSalvas();
