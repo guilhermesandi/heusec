@@ -78,6 +78,14 @@ a:hover {
     line-height: 25px;
 }
 
+.body {
+  background-color: #131212;
+}
+
+.main h1 {
+  color: white;
+}
+
 ul {
     padding-inline-start: 0px;
 }
@@ -92,6 +100,10 @@ p {
 
 .card-header {
     padding: 12px 0px;
+}
+
+.card-header p {
+  color: white
 }
 
 .card-body {

@@ -51,6 +51,10 @@ a:hover {
   padding-top: 20px;
 }
 
+.body {
+  background-color: #131212;
+}
+
 .main h1 {
   color: #040505;
   font-size: 24px;
@@ -63,8 +67,13 @@ a:hover {
   line-height: 25px;
 }
 
-.title-equipe {
+.body h1 {
   padding-top: 60px;
+  color: white;
+}
+
+.body p {
+  color: white;
 }
 
 .card-deck {
@@ -83,7 +92,7 @@ a:hover {
 .footer {
   background: #040505;
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   color: #e0e1e7;
 }
 
