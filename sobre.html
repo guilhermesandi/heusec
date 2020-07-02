@@ -10,18 +10,19 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
-  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/sobre.css" />
   <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
   <script src="https://kit.fontawesome.com/46060d9aa5.js" crossorigin="anonymous"></script>
-  <script src="index.js"></script>
+
+  <script src="sobre.js"></script>
+  
 </head>
 
-<body>
+<body class="body">
   <header class="header">
     <header class="container header">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html"><img src="img/logo/logobranco.png" alt=""></a>
+        <a class="navbar-brand" href="index.html"><img src="img/logo/logobranco.png" alt="" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -38,9 +39,9 @@
                 Segurança
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item disabled" href="#">Compras online</a>
-                <a class="dropdown-item disabled" href="#">Email</a>
-                <a class="dropdown-item disabled" href="#">Anúncios</a>
+                <a class="dropdown-item btn-iniciante" href="#">Iniciante</a>
+                <a class="dropdown-item btn-intermediario" href="#">Intermediario</a>
+                <a class="dropdown-item btn-avancado" href="#">Avançado</a>
                 <a class="dropdown-item" href="senha.html">Testar senha</a>
               </div>
             </li>
@@ -51,7 +52,7 @@
               <a class="nav-link" href="sobre.html">Sobre</a>
             </li>
             <li class="nav-item dropdown usuario">
-              <a class="nav-link login" href="#">Login | Cadastre-se</a>
+              <a class="nav-link login" href="login.html">Login | Cadastre-se</a>
             </li>
           </ul>
         </div>
@@ -62,7 +63,7 @@
   <main class="main container">
     <div class="row">
       <div class="col-12">
-        <h1 class="title">Sobre</h1>
+        <h1 class="title-sobre">Sobre</h1>
         <p>
           Desenvolvido em equipe, por alunos da Ciência da Computação da
           Puc-Coração Eucarístico.
@@ -161,6 +162,7 @@
       </div>
     </footer>
   </footer>
+
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>

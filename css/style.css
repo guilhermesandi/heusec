@@ -22,7 +22,7 @@ a:hover {
 }
 /* Fim estilos gerais */
 
-/*Header*/
+/* Header */
 .header {
   background: #040505;
 }
@@ -44,14 +44,14 @@ a:hover {
 .header_area {
   padding: 20px;
 }
-/*Header Final*/
+/* Header Final */
 
 .carousel-inner img {
   height: 600px;
   padding-bottom: 20px;
 }
 
-/*Main*/
+/* Main */
 .body {
   background-color: #131212;
 }
@@ -81,9 +81,9 @@ a:hover {
   margin-bottom: 10px;
 }
 
-/*Main Final*/
+/* Main Final */
 
-/*Footer*/
+/* Footer */
 .footer {
   background: #040505;
   padding-top: 20px;
@@ -110,11 +110,9 @@ a:hover {
 .footer .contato {
   padding-bottom: 15px;
 }
-/*Footer Final*/
+/* Footer Final */
 
-/* Testes */
-
-/*Login*/
+/* Login */
 .text-info {
   color: #b24d53 !important;
 }
@@ -124,9 +122,103 @@ a:hover {
   border-color: #b24d53;
 }
 
-/*media queries*/
+/* media queries */
 @media screen and (max-width: 767px) {
   .carousel {
     display: none;
   }
+<<<<<<< HEAD
+=======
+  .cards-main {
+    margin-top: 10px;
+  }
+  .menu {
+    display: none;
+  }
+  .menu-mobile {
+    width: 100%;
+    height: 100px;
+    background-color: #040505;
+    color: white;
+  }
+  #menu-icone {
+    display: none;
+  }
+  #icone {
+    font-size: 2.5em;
+    position: absolute;
+    right: 20px;
+    color: #b24d53;
+    z-index: 9999;
+  }
+  #icone-fechar {
+    font-size: 2.5em;
+    position: absolute;
+    right: 20px;
+    color: #b24d53;
+    z-index: 9999;
+    display: none;
+  }
+
+  .btn-primary {
+    background-color: #b24d53 !important;
+    border: #b24d53 !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-mobile {
+    display: none;
+  }
+}
+
+/* botao menu mobile */
+.tela-mobile {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  position: fixed;
+  flex-wrap: wrap;
+  align-content: center;
+  top: 0px;
+  left: 0px;
+  height: 0%;
+  width: 100%;
+  z-index: 999;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+.tela-mobile li {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  align-content: center;
+}
+
+.tela-mobile li a {
+  display: block;
+  text-align: center;
+}
+
+#menu-icone:checked ~ label i:last-child {
+  display: block;
+  position: fixed;
+}
+
+#menu-icone:checked ~ label i:first-child {
+  display: none;
+}
+
+#menu-icone:not(checked) ~ label i:last-child {
+  display: none;
+}
+
+#menu-icone:not(checked) ~ label i:first-child {
+  display: block;
+}
+
+#menu-icone:checked ~ ul {
+  height: 100%;
+>>>>>>> master
 }

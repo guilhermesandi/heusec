@@ -1,6 +1,58 @@
+/* Estilos gerais */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: #b24d53;
+  text-decoration: none;
+}
+/* Fim estilos gerais */
+
+/* Header */
+.header {
+  background: #040505;
+}
+
+.header .navbar {
+  background: #040505 !important;
+  font-weight: bold;
+  padding: 15px 0px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffffff;
+}
+
+.header .navbar img {
+  width: 100px;
+}
+
+.header_area {
+  padding: 20px;
+}
+/* Header Final */
+
 /* Main */
 .main {
-  padding-top: 60px;
+  padding-top: 20px;
+}
+
+.body {
+  background-color: #131212;
 }
 
 .main h1 {
@@ -15,8 +67,13 @@
   line-height: 25px;
 }
 
-.title-equipe {
+.body h1 {
   padding-top: 60px;
+  color: white;
+}
+
+.body p {
+  color: white;
 }
 
 .card-deck {
@@ -30,3 +87,32 @@
   font-size: 18px;
 }
 /* Fim Main */
+
+/* Footer */
+.footer {
+  background: #040505;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #e0e1e7;
+}
+
+.footer h2 {
+  color: #b24d53;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.footer_copy {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.footer .sobre p {
+  margin-bottom: 1rem;
+}
+
+.footer .contato {
+  padding-bottom: 15px;
+}
+/* Footer Final */

@@ -13,73 +13,43 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/senha.css" />
     <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
     <script
       src="https://kit.fontawesome.com/46060d9aa5.js"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
   </head>
 
-  <body>
+  <body class="body">
     <header class="header">
       <header class="container header">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="index.html"
-            ><img src="img/logo/logobranco.png" alt=""
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <a class="navbar-brand" href="index.html"><img src="img/logo/logobranco.png" alt="" /></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-
+  
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a
-                  class="nav-link disabled"
-                  href="#"
-                  tabindex="-1"
-                  aria-disabled="true"
-                  >Contato</a
-                >
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contato</a>
               </li>
               <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
                   Segurança
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item disabled" href="#">Compras online</a>
-                  <a class="dropdown-item disabled" href="#">Email</a>
-                  <a class="dropdown-item disabled" href="#">Anúncios</a>
+                  <a class="dropdown-item btn-iniciante" href="#">Iniciante</a>
+                  <a class="dropdown-item btn-intermediario" href="#">Intermediario</a>
+                  <a class="dropdown-item btn-avancado" href="#">Avançado</a>
                   <a class="dropdown-item" href="senha.html">Testar senha</a>
                 </div>
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link disabled"
-                  href="#"
-                  tabindex="-1"
-                  aria-disabled="true"
-                  >Newsletter</a
-                >
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Newsletter</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="sobre.html">Sobre</a>
@@ -96,7 +66,7 @@
     <main class="container main">
       <div class="page-content">
         <h1>Segurança da senha</h1>
-        <div class="card border-success mb-3">
+        <div class="card-body border-success mb-3">
           <div class="card-header bg-transparent border-success">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -125,7 +95,7 @@
           <ul class="hsimp-checks">
             <h2 id="iscompromised">
               <span
-                >Essa senha não foi comprometida em nenhuma vialação do banco de
+                >Essa senha não foi comprometida em nenhuma violação de banco de
                 dados!</span
               >
             </h2>

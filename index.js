@@ -286,6 +286,7 @@ let adicionaCard = () => {
   let url = document.getElementById("txtUrl").value;
   let imagem = document.getElementById("txtImagem").value;
   let resumo = document.getElementById("txtResumo").value;
+  let texto = document.getElementById("txtTexto").value;
 
   let novoCard = {
     id: id,
@@ -294,6 +295,7 @@ let adicionaCard = () => {
     url: url,
     img: imagem,
     resumo: resumo,
+    texto: texto,
   };
   artigos.noticia.push(novoCard);
 
@@ -331,37 +333,16 @@ let logado = () => {
     }
     let tela = document.querySelector(".adicionaCard");
 
-    let texto = `<button
-    type="button"
-    class="btn-salvar btn btn-warning btn-primary"
-    data-toggle="modal"
-    data-target="#exampleModal"
-  >
-    Adicionar Card
-  </button>
-<div
-class="modal fade"
-id="exampleModal"
-tabindex="-1"
-role="dialog"
-aria-labelledby="exampleModalLabel"
-aria-hidden="true"
->
-<div class="modal-dialog">
-<div class="modal-content">
-<div class="modal-header">
-  <h5 class="modal-title" id="exampleModalLabel">
-    Digite os dados do novo Card
-  </h5>
-  <button
-    type="button"
-    class="close"
-    data-dismiss="modal"
-    aria-label="Close"
-  >
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+    let texto = `
+    
+    <button type="button" class="btn-salvar btn btn-warning" data-toggle="modal" data-target="#exampleModal">Adicionar Card</button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Digite os dados do novo Card</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
 <div class="modal-body">
   <div class="input-group mb-3">
     <div class="input-group-prepend">
@@ -385,11 +366,11 @@ aria-hidden="true"
         >Categoria</span
       >
     </div>
-    <input
-      id="txtCategoria"
-      type="text"
-      class="form-control hsimp-level"
-    />
+    <select class="custom-select" id="txtCategoria">
+    <option value="iniciante">Iniciante</option>
+    <option value="intermediario">Intermediario</option>
+    <option value="avançado">Avançado</option>
+  </select>
   </div>
   <div class="input-group mb-3">
     <div class="input-group-prepend">
@@ -433,6 +414,7 @@ aria-hidden="true"
       class="form-control hsimp-level"
     />
   </div>
+<<<<<<< HEAD
 </div>
 <div class="modal-footer">
   <button type="button" class="btn" data-dismiss="modal">
@@ -446,6 +428,22 @@ aria-hidden="true"
   >
     Adicionar
   </button>
+=======
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span
+        class="input-group-text"
+        id="inputGroup-sizing-default"
+        >Texto</span
+      >
+    </div>
+    <textarea id="txtTexto" type="text" class="form-control hsimp-level" rows="4"/></textarea>
+  </div>
+</div>
+<div class="modal-footer">
+  <button id="btn-adiciona-card" type="button" class="btn btn-primary" data-dismiss="modal">Adicionar</button>
+  <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+>>>>>>> master
 </div>
 </div>
 </div>
@@ -529,17 +527,18 @@ let atualizaTela = (conteudo) => {
 
     texto += `<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 cards" id="${noticia.id}">
     <div class="card bg-dark" style="width: 18rem;">
-    <a href="${noticia.url}" target = "_blank"
+    <a href="${noticia.url}" target = "blank" rel="noopener noreferrer"
       ><img src="${noticia.img}" class="card-img-top padrao" alt="..."
     /></a>
     <div class="card-body">
-    <a href="${noticia.url}"><h5 class="card-title">${noticia.titulo}</h5></a>
+    <a href="${noticia.url}" target="blank" rel="noopener noreferrer"><h5 class="card-title">${noticia.titulo}</h5></a>
       <p class="card-text">
         ${noticia.resumo}
       </p>
       </div>
       <p class="more">
       <div class = "card-footer">
+<<<<<<< HEAD
 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal${i}">
   Saber mais
 </button>
@@ -567,6 +566,36 @@ let atualizaTela = (conteudo) => {
       </p>
     </div>
   </div>
+=======
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal${i}">Saber mais</button>
+      </div>
+
+      <div class="modal fade" id="exampleModal${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content text-dark">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">${noticia.titulo}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <h5>${noticia.texto}</h5>
+            </div>
+            <div class="modal-footer">
+              <a href="${noticia.url}" target="blank" rel="noopener noreferrer">
+                <button type="button" class="btn btn-primary visitaSite" >Visitar Site</button>
+              </a>
+              <button type="button" class="btn btn-dark adicionaFavorito" id="${noticia.id}" onclick = "adicionaFavorito(this)"> Favoritar</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+            </p>
+          </div>
+        </div>
+>>>>>>> master
   
   
   `;
