@@ -81,14 +81,38 @@ let salvarSenha = () => {
 
     salvas = JSON.parse(localStorage.getItem("senhasSalvas"));
 
-    for (i = 0; i < salvas.senhasSalvas.length; i++) {
-      let endereco = salvas.senhasSalvas[i].endereco;
-      let login = salvas.senhasSalvas[i].login;
-      let senha = salvas.senhasSalvas[i].senha;
+    salvas.senhasSalvas.push({ endereco, login, senha });
 
-      texto =
-        texto +
-        `
+    localStorage.setItem("senhasSalvas", JSON.stringify(salvas));
+  }
+};
+
+let exibeSenhasSalvas = () => {
+  let tela = document.querySelector("#listaSenhas");
+  let texto = "";
+  let telaQt = document.querySelector("#qtSenhas");
+  let textoQt = "";
+
+  salvas = JSON.parse(localStorage.getItem("senhasSalvas"));
+
+  if (salvas.senhasSalvas.length === 0) {
+    localStorage.removeItem("pesquisasSalvas");
+  }
+
+  let qtSenhas = salvas["senhasSalvas"].length;
+  textoQt = `
+    <p>${qtSenhas} senha(s)</p>
+  `;
+  telaQt.innerHTML = textoQt;
+
+  for (i = 0; i < salvas.senhasSalvas.length; i++) {
+    let endereco = salvas.senhasSalvas[i].endereco;
+    let login = salvas.senhasSalvas[i].login;
+    let senha = salvas.senhasSalvas[i].senha;
+
+    texto =
+      texto +
+      `
     <li class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
       <section>${endereco}</section>
     </li>
@@ -99,7 +123,6 @@ let salvarSenha = () => {
         <button type="button" value="${i}" class="btn btn-danger" data-dismiss="modal" onclick="apagaSenha(${i})">Apagar senha</button>
       </div>
     </div>`;
-    }
   }
 
   tela.innerHTML = texto;
