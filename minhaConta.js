@@ -77,6 +77,29 @@ let salvarSenha = () => {
 
     salvas = JSON.parse(localStorage.getItem('senhasSalvas'));
 
+<<<<<<< HEAD
+  texto = `<!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary align-middle" data-toggle="modal" data-target="#exampleModal1">
+    ${endereco}
+  </button>
+  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Senha para o site Requisitado</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5>Endereço do site: ${endereco}</h5>
+          <h5>Senha: ${senha}</h5>
+          <button onclick = "apagaSenha()">Apagar senha</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Fechar</button>
+        </div>
+=======
     salvas.senhasSalvas.push({ endereco, login, senha });
 
     localStorage.setItem('senhasSalvas', JSON.stringify(salvas));
@@ -116,6 +139,7 @@ let exibeSenhasSalvas = () => {
         <h5><strong>Login:</strong> ${login}</h5>
         <h5><strong>Senha:</strong> ${senha}</h5>
         <button type="button" value="${i}" class="btn btn-danger" data-dismiss="modal" onclick="apagaSenha(${i})">Apagar senha</button>
+>>>>>>> master
       </div>
     </div>`;
   };

@@ -494,7 +494,7 @@ let formulario = () => {
           <p class="card-text">Voce se considera um usuario avancado da Web, esta a todo tempo usando a internet para as mais diversas finalidades, sabe navegar de modo eficiente na Web e sempre acha a informacao que precisa. Sabe dos riscos que esta exposto e consegue identificar softwares maliciosos rapidamente, esta sempre atras de novas informacoes sobre seguranca na internet.</p>
         </div>
         <div class="card-footer">
-          <a class="btn btn-dark btn-avancado">Comece aqui</a>
+          <a class="btn btn-warning btn-avancado">Comece aqui</a>
         </div>
   </div>
 

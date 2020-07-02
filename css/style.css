@@ -65,6 +65,10 @@ a:hover {
 .body {
   background-color: #131212;
 }
+.modal-body,
+.modal-title {
+  color: black;
+}
 
 .padrao {
   height: 178.96px;
