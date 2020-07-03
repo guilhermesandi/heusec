@@ -507,6 +507,7 @@ let atualizaTela = (conteudo) => {
               </a>
               <button type="button" class="btn btn-dark adicionaFavorito" id="${noticia.id}" onclick = "adicionaFavorito(this)"> Favoritar</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-dark removeFavorito" id="${noticia.id}" onclick = "removeFavorito(this)"> Favoritar</button>
             </div>
           </div>
         </div>
