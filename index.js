@@ -219,43 +219,6 @@ var dados = {
   ],
 };
 
-onload = () => {
-  let usuarioCorrente = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
-  let artigos = JSON.stringify(dados);
-  localStorage.setItem("artigos", artigos);
-
-  if (usuarioCorrente != null) {
-    logado();
-    if (usuarioCorrente.login == "admin") {
-      document
-        .getElementById("btn-adiciona-card")
-        .addEventListener("click", adicionaCard);
-    }
-    principal();
-
-    document.getElementById("logout").addEventListener("click", logout);
-  } else {
-    login();
-    formulario();
-  }
-
-  let botoes;
-  botoes = document.querySelectorAll(".btn-iniciante");
-  for (i = 0; i < botoes.length; i++) {
-    botoes[i].addEventListener("click", iniciante);
-  }
-
-  botoes = document.querySelectorAll(".btn-intermediario");
-  for (i = 0; i < botoes.length; i++) {
-    botoes[i].addEventListener("click", intermediario);
-  }
-
-  botoes = document.querySelectorAll(".btn-avancado");
-  for (i = 0; i < botoes.length; i++) {
-    botoes[i].addEventListener("click", avancado);
-  }
-};
-
 let adicionaFavorito = (e) => {
   let id = e.getAttribute("id");
   let usuario = JSON.parse(sessionStorage.getItem("usuarioCorrente")).login;
@@ -563,11 +526,6 @@ let logout = () => {
   document.location.reload();
 };
 
-//let favoritos = () => {
-//document.
-
-//};
-
 let principal = () => {
   let Json = JSON.parse(localStorage.getItem("artigos"));
   let conteudo = Json.noticia;
@@ -612,4 +570,45 @@ let avancado = () => {
     }
   }
   atualizaTela(tela);
+};
+
+onload = () => {
+  let usuarioCorrente = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
+  let artigosLS = localStorage.getItem("artigo");
+  console.log(artigosLS);
+  if (artigosLS == null) {
+    let artigos = JSON.stringify(dados);
+    localStorage.setItem("artigos", artigos);
+  }
+
+  if (usuarioCorrente != null) {
+    logado();
+    if (usuarioCorrente.login == "admin") {
+      document
+        .getElementById("btn-adiciona-card")
+        .addEventListener("click", adicionaCard);
+    }
+    principal();
+
+    document.getElementById("logout").addEventListener("click", logout);
+  } else {
+    login();
+    formulario();
+  }
+
+  let botoes;
+  botoes = document.querySelectorAll(".btn-iniciante");
+  for (i = 0; i < botoes.length; i++) {
+    botoes[i].addEventListener("click", iniciante);
+  }
+
+  botoes = document.querySelectorAll(".btn-intermediario");
+  for (i = 0; i < botoes.length; i++) {
+    botoes[i].addEventListener("click", intermediario);
+  }
+
+  botoes = document.querySelectorAll(".btn-avancado");
+  for (i = 0; i < botoes.length; i++) {
+    botoes[i].addEventListener("click", avancado);
+  }
 };
