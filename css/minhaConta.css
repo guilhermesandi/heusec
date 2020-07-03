@@ -87,7 +87,9 @@ ul .list-group-item {
   color: white;
 }
 
-
+.card-informacoes {
+  color:black;
+}
 
 .card {
   border-top-left-radius: 0px;
