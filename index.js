@@ -539,17 +539,22 @@ let atualizaTela = (conteudo) => {
 };
 
 let adicionaComentario = (e) => {
-  console.log(e);
   let id = e.getAttribute("id");
 
   let tela = document.querySelector(".comentarios" + id);
 
+  let comentarios = [];
+
   let comentario = document.getElementById("txtComentario" + id).value;
+  let comentarioLS = { comentario: comentario, card: id };
 
   let texto = `<p>${comentario}</p>`;
 
+  comentarios.push(comentarioLS);
+
   tela.innerHTML += texto;
-  console.log(tela);
+  console.log(comentarios);
+  localStorage("comentarios", comentarios);
 };
 
 let removeCard = (e) => {
