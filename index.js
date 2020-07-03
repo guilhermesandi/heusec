@@ -479,7 +479,7 @@ let atualizaTela = (conteudo) => {
       ><img src="${noticia.img}" class="card-img-top padrao" alt="..."
     /></a>
     <div class="card-body">
-    <a href="${noticia.url}" target="blank" rel="noopener noreferrer"><h5 class="card-title">${noticia.titulo}</h5></a>
+    <a href="${noticia.url}" target="blank" rel="noopener noreferrer"><h5 class="card-title">${i} - ${noticia.titulo}</h5></a>
       <p class="card-text">
         ${noticia.resumo}
       </p>
@@ -507,7 +507,7 @@ let atualizaTela = (conteudo) => {
               </a>
               <button type="button" class="btn btn-dark adicionaFavorito" id="${noticia.id}" onclick = "adicionaFavorito(this)"> Favoritar</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-dark removeFavorito" id="${noticia.id}" onclick = "removeFavorito(this)"> Favoritar</button>
+              
             </div>
           </div>
         </div>
@@ -520,6 +520,19 @@ let atualizaTela = (conteudo) => {
   `;
   }
   tela.innerHTML = texto;
+};
+
+let removeCard = (e) => {
+  let id = e.getAttribute("id");
+  console.log(id);
+  let artigos = JSON.parse(localStorage.getItem("artigos"));
+  for (i = 0; i < artigos.noticia.length; i++) {
+    console.log(artigos.noticia[i].id);
+    if (artigos.noticia[i].id == id) {
+      artigos -= artigos.noticia[i];
+    }
+  }
+  console.log(artigos);
 };
 
 let logout = () => {
