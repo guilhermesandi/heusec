@@ -77,7 +77,7 @@ var dados = {
       url: "https://www.kaspersky.com.br/resource-center/threats/trojans",
       img: "img/informacao/intermediario/troia.jpg",
       resumo:
-        "Saiba o que é, e mais importante como se proteger desse destruidor vírus.",
+        "Saiba o que é, e mais importante, como se proteger desse destruidor vírus.",
       texto: `Cavalo de Troia é um tipo de malware que, frequentemente, está disfarçado de software legítimo. Eles podem ser empregados por criminosos virtuais e hackers para tentar obter acesso aos sistemas dos usuários. Em geral, os usuários são enganados por alguma forma de engenharia social para carregar e executar cavalos de Troia em seus sistemas. Uma vez ativados, os cavalos de Troia permitem que os criminosos o espionem, roubaem seus dados confidenciais e obtenham acesso ao seu sistema pela porta de fundo. Essas ações podem incluir:
 
       Excluir dados
@@ -226,9 +226,11 @@ onload = () => {
 
   if (usuarioCorrente != null) {
     logado();
-    document
-      .getElementById("btn-adiciona-card")
-      .addEventListener("click", adicionaCard);
+    if (usuarioCorrente.login == "admin") {
+      document
+        .getElementById("btn-adiciona-card")
+        .addEventListener("click", adicionaCard);
+    }
     principal();
 
     document.getElementById("logout").addEventListener("click", logout);
@@ -311,7 +313,6 @@ let logado = () => {
 
   let logins = document.querySelectorAll(".login");
   let usuario = document.querySelectorAll(".usuario");
-  console.log(usuarioCorrente.login);
 
   if (usuarioCorrente.login == "admin") {
     for (i = 0; i < logins.length; i++) {
