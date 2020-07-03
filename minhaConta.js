@@ -42,7 +42,7 @@ let encontraFavoritos = () => {
 };
 
 let atualizaTela = (conteudo) => {
-  let tela = document.querySelector(".cards-main");
+  let tela = document.querySelector(".cards-minhaConta");
   let texto = "";
   for (i = 0; i < conteudo.length; i++) {
     let noticia = conteudo[i];
@@ -65,7 +65,7 @@ let atualizaTela = (conteudo) => {
 
       <div class="modal fade" id="exampleModal${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
-          <div class="modal-content text-white">
+          <div class="modal-content text-dark">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">${noticia.titulo}</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -79,8 +79,8 @@ let atualizaTela = (conteudo) => {
               <a href="${noticia.url}" target="blank" rel="noopener noreferrer">
                 <button type="button" class="btn btn-primary visitaSite" >Visitar Site</button>
               </a>
-              <button type="button" class="btn btn-dark adicionaFavorito" id="${noticia.id}" onclick = "adicionaFavorito(this)"> Favoritar</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-secondary adicionaFavorito disabled" id="${noticia.id}" onclick = "adicionaFavorito(this)"> Favoritar</button>
+              <button type="button" class="btn btn-dark" data-dismiss="modal">Fechar</button>
             </div>
           </div>
         </div>
