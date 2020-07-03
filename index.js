@@ -535,12 +535,14 @@ let principal = () => {
 
 let iniciante = () => {
   let Json = JSON.parse(localStorage.getItem("artigos"));
+  console.log(Json);
   let conteudo = Json.noticia;
+  console.log(conteudo);
 
   let tela = [];
-  for (i = 0; i < dados.noticia.length; i++) {
-    if (dados.noticia[i].categoria == "iniciante") {
-      tela.push(dados.noticia[i]);
+  for (i = 0; i < conteudo.length; i++) {
+    if (conteudo[i].categoria == "iniciante") {
+      tela.push(conteudo[i]);
     }
   }
   atualizaTela(tela);
@@ -548,12 +550,14 @@ let iniciante = () => {
 
 let intermediario = () => {
   let Json = JSON.parse(localStorage.getItem("artigos"));
+  console.log(Json);
   let conteudo = Json.noticia;
+  console.log(conteudo);
 
   let tela = [];
-  for (i = 0; i < dados.noticia.length; i++) {
-    if (dados.noticia[i].categoria == "intermediario") {
-      tela.push(dados.noticia[i]);
+  for (i = 0; i < conteudo.length; i++) {
+    if (conteudo[i].categoria == "intermediario") {
+      tela.push(conteudo[i]);
     }
   }
   atualizaTela(tela);
@@ -561,12 +565,14 @@ let intermediario = () => {
 
 let avancado = () => {
   let Json = JSON.parse(localStorage.getItem("artigos"));
+  console.log(Json);
   let conteudo = Json.noticia;
+  console.log(conteudo);
 
   let tela = [];
-  for (i = 0; i < dados.noticia.length; i++) {
-    if (dados.noticia[i].categoria == "avancado") {
-      tela.push(dados.noticia[i]);
+  for (i = 0; i < conteudo.length; i++) {
+    if (conteudo[i].categoria == "avancado") {
+      tela.push(conteudo[i]);
     }
   }
   atualizaTela(tela);
@@ -574,8 +580,8 @@ let avancado = () => {
 
 onload = () => {
   let usuarioCorrente = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
-  let artigosLS = localStorage.getItem("artigo");
-  console.log(artigosLS);
+  let artigosLS = localStorage.getItem("artigos");
+
   if (artigosLS == null) {
     let artigos = JSON.stringify(dados);
     localStorage.setItem("artigos", artigos);
