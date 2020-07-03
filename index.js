@@ -479,7 +479,7 @@ let atualizaTela = (conteudo) => {
       ><img src="${noticia.img}" class="card-img-top padrao" alt="..."
     /></a>
     <div class="card-body">
-    <a href="${noticia.url}" target="blank" rel="noopener noreferrer"><h5 class="card-title">${i} - ${noticia.titulo}</h5></a>
+    <a href="${noticia.url}" target="blank" rel="noopener noreferrer"><h5 class="card-title">${noticia.id} - ${noticia.titulo}</h5></a>
       <p class="card-text">
         ${noticia.resumo}
       </p>
@@ -500,11 +500,26 @@ let atualizaTela = (conteudo) => {
             </div>
             <div class="modal-body">
             <h5>${noticia.texto}</h5>
+            <h3>Anotações:</h3>
+            <div  class = "comentarios${noticia.id}"></div>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span
+                class="input-group-text"
+                id="inputGroup-sizing-default"
+                >Texto</span
+              >
+            </div>
+            <textarea id="txtComentario${noticia.id}" type="text" class="form-control hsimp-level" rows="4"/></textarea>
+            <button id="${noticia.id}" onclick="adicionaComentario(this)">Comentar</button>
+          </div>
+          
             </div>
             <div class="modal-footer">
               <a href="${noticia.url}" target="blank" rel="noopener noreferrer">
                 <button type="button" class="btn btn-primary visitaSite" >Visitar Site</button>
               </a>
+              
               <button type="button" class="btn btn-dark adicionaFavorito" id="${noticia.id}" onclick = "adicionaFavorito(this)"> Favoritar</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
               
@@ -512,7 +527,8 @@ let atualizaTela = (conteudo) => {
           </div>
         </div>
       </div>
-            </p>
+      
+            
           </div>
         </div>
   
@@ -520,6 +536,20 @@ let atualizaTela = (conteudo) => {
   `;
   }
   tela.innerHTML = texto;
+};
+
+let adicionaComentario = (e) => {
+  console.log(e);
+  let id = e.getAttribute("id");
+
+  let tela = document.querySelector(".comentarios" + id);
+
+  let comentario = document.getElementById("txtComentario" + id).value;
+
+  let texto = `<p>${comentario}</p>`;
+
+  tela.innerHTML += texto;
+  console.log(tela);
 };
 
 let removeCard = (e) => {
@@ -549,9 +579,8 @@ let principal = () => {
 
 let iniciante = () => {
   let Json = JSON.parse(localStorage.getItem("artigos"));
-  console.log(Json);
+
   let conteudo = Json.noticia;
-  console.log(conteudo);
 
   let tela = [];
   for (i = 0; i < conteudo.length; i++) {
@@ -564,9 +593,8 @@ let iniciante = () => {
 
 let intermediario = () => {
   let Json = JSON.parse(localStorage.getItem("artigos"));
-  console.log(Json);
+
   let conteudo = Json.noticia;
-  console.log(conteudo);
 
   let tela = [];
   for (i = 0; i < conteudo.length; i++) {
@@ -579,9 +607,8 @@ let intermediario = () => {
 
 let avancado = () => {
   let Json = JSON.parse(localStorage.getItem("artigos"));
-  console.log(Json);
+
   let conteudo = Json.noticia;
-  console.log(conteudo);
 
   let tela = [];
   for (i = 0; i < conteudo.length; i++) {
