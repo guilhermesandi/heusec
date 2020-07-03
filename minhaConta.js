@@ -65,7 +65,7 @@ let atualizaTela = (conteudo) => {
 
       <div class="modal fade" id="exampleModal${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
-          <div class="modal-content text-white">
+          <div class="modal-content text-dark">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">${noticia.titulo}</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -97,25 +97,26 @@ let atualizaTela = (conteudo) => {
 
 let salvas = []; // Array senhas salvas
 let salvarSenha = () => {
-  let endereco, login, senha, tela, texto;
+  let endereco, login, senha, tela, texto, usuario;
+
+  endereco = document.getElementById("txtEndereco").value;
+  login = document.getElementById("txtLogin").value;
+  senha = document.getElementById("txtSenha").value;
+  usuario = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
+  console.log(usuario);
+  usuario = usuario.login;
+
+  console.log(usuario);
 
   if (localStorage.senhasSalvas == undefined) {
-    endereco = document.getElementById("txtEndereco").value;
-    login = document.getElementById("txtLogin").value;
-    senha = document.getElementById("txtSenha").value;
-
     localStorage.setItem(
       "senhasSalvas",
-      JSON.stringify({ senhasSalvas: [{ endereco, login, senha }] })
+      JSON.stringify({ senhasSalvas: [{ usuario, endereco, login, senha }] })
     );
   } else {
-    endereco = document.getElementById("txtEndereco").value;
-    login = document.getElementById("txtLogin").value;
-    senha = document.getElementById("txtSenha").value;
-
     salvas = JSON.parse(localStorage.getItem("senhasSalvas"));
 
-    salvas.senhasSalvas.push({ endereco, login, senha });
+    salvas.senhasSalvas.push({ usuario, endereco, login, senha });
 
     localStorage.setItem("senhasSalvas", JSON.stringify(salvas));
   }
@@ -128,25 +129,25 @@ let exibeSenhasSalvas = () => {
   let textoQt = "";
 
   salvas = JSON.parse(localStorage.getItem("senhasSalvas"));
+  console.log(salvas);
 
-  if (salvas.senhasSalvas.length === 0) {
-    localStorage.removeItem("pesquisasSalvas");
-  }
+  let usuarioCorrente = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
 
-  let qtSenhas = salvas["senhasSalvas"].length;
-  textoQt = `
-    <p>${qtSenhas} senha(s)</p>
-  `;
-  telaQt.innerHTML = textoQt;
+  usuarioCorrente = usuarioCorrente.login;
 
-  for (i = 0; i < salvas.senhasSalvas.length; i++) {
-    let endereco = salvas.senhasSalvas[i].endereco;
-    let login = salvas.senhasSalvas[i].login;
-    let senha = salvas.senhasSalvas[i].senha;
+  if (salvas != null) {
+    let qtSenhas = 0;
 
-    texto =
-      texto +
-      `
+    for (i = 0; i < salvas.senhasSalvas.length; i++) {
+      if (salvas.senhasSalvas[i].usuario == usuarioCorrente) {
+        let endereco = salvas.senhasSalvas[i].endereco;
+        let login = salvas.senhasSalvas[i].login;
+        let senha = salvas.senhasSalvas[i].senha;
+        qtSenhas++;
+
+        texto =
+          texto +
+          `
     <li class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
       <section>${endereco}</section>
     </li>
@@ -157,9 +158,17 @@ let exibeSenhasSalvas = () => {
         <button type="button" value="${i}" class="btn btn-danger" data-dismiss="modal" onclick="apagaSenha(${i})">Apagar senha</button>
       </div>
     </div>`;
-  }
+      }
 
-  tela.innerHTML = texto;
+      console.log(qtSenhas);
+      textoQt = `
+    <p>${qtSenhas} senha(s)</p>
+  `;
+
+      telaQt.innerHTML = textoQt;
+      tela.innerHTML = texto;
+    }
+  }
 };
 
 let pesquisaSenhas = () => {
