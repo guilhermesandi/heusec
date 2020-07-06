@@ -75,6 +75,7 @@ a:hover {
 /* Header Final */
 
 .carousel-inner img {
+  margin-top: 75px;
   height: 600px;
   padding-bottom: 20px;
 }
