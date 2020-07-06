@@ -539,7 +539,7 @@ let atualizaTela = (conteudo) => {
       ><img src="${noticia.img}" class="card-img-top padrao" alt="..."
     /></a>
     <div class="card-body">
-    <a href="${noticia.url}" target="blank" rel="noopener noreferrer"><h5 class="card-title">${noticia.id} - ${noticia.titulo}</h5></a>
+    <a href="${noticia.url}" target="blank" rel="noopener noreferrer"><h5 class="card-title">${i} - ${noticia.titulo}</h5></a>
       <p class="card-text">
         ${noticia.resumo}
       </p>
