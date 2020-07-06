@@ -88,23 +88,29 @@ a:hover {
   height: 178.96px;
 }
 
+.main {
+  padding: 0px 30px;
+  padding-bottom: 26px;
+}
+
 .cards {
   padding-bottom: 20px;
   display: flex;
-
   justify-content: center;
 }
+
 .card {
   color: #ffffff;
 }
+
 .card-title {
   justify-content: center;
 }
+
 .adicionaCard {
   text-align: center;
   margin-bottom: 10px;
 }
-
 /* Main Final */
 
 /* Footer */
