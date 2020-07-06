@@ -470,11 +470,14 @@ let formulario = () => {
 let atualizaTela = (conteudo) => {
   let tela = document.querySelector(".cards-main");
   let texto = "";
+
+  texto += `<div class="card-deck">`
+
   for (i = 0; i < conteudo.length; i++) {
     let noticia = conteudo[i];
 
-    texto += `<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 cards" id="${noticia.id}">
-    <div class="card bg-dark" style="width: 18rem;">
+    texto += `<div class="cards" id="${noticia.id}">
+    <div class="card bg-dark" style="width: 350px;">
     <a href="${noticia.url}" target = "blank" rel="noopener noreferrer"
       ><img src="${noticia.img}" class="card-img-top padrao" alt="..."
     /></a>
@@ -535,6 +538,9 @@ let atualizaTela = (conteudo) => {
   
   `;
   }
+
+  texto += `</div>`
+
   tela.innerHTML = texto;
 };
 
