@@ -560,19 +560,8 @@ let atualizaTela = (conteudo) => {
             </div>
             <div class="modal-body">
             <h5>${noticia.texto}</h5>
-            <h3>Anotações:</h3>
-            <div  class = "comentarios${noticia.id}"></div>
-            <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span
-                class="input-group-text"
-                id="inputGroup-sizing-default"
-                >Texto</span
-              >
-            </div>
-            <textarea id="txtComentario${noticia.id}" type="text" class="form-control hsimp-level" rows="4"/></textarea>
-            <button id="${noticia.id}" onclick="adicionaComentario(this)">Comentar</button>
-          </div>
+            
+            
           
             </div>
             <div class="modal-footer">
@@ -600,6 +589,7 @@ let atualizaTela = (conteudo) => {
 
 let comentariosLista = { comentarios: [] };
 
+/*
 let adicionaComentario = (e) => {
   let id = e.getAttribute("id");
 
@@ -616,6 +606,7 @@ let adicionaComentario = (e) => {
 
   localStorage.setItem("comentarios", comentariosLista);
 };
+*/
 
 let logout = () => {
   sessionStorage.removeItem("usuarioCorrente");
