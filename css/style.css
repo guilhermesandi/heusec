@@ -190,6 +190,10 @@ a:hover {
   .carousel {
     display: none;
   }
+
+  .main {
+    margin-top: 105px;
+  }
   .cards-main {
     margin-top: 10px;
   }
