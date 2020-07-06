@@ -224,20 +224,29 @@ let adicionaFavorito = (e) => {
   let usuario = JSON.parse(sessionStorage.getItem("usuarioCorrente")).login;
   let favoritos = JSON.parse(localStorage.getItem("favoritos"));
   let cardFav;
-  for (i = 0; i < dados.noticia.length; i++) {
+  let acabou = false;
+  for (i = 0; i < dados.noticia.length && !acabou; i++) {
     if (dados.noticia[i].id == id) {
       cardFav = dados.noticia[i];
+      acabou = true;
     }
   }
-
+  let cont = 0;
   let favoritoDoUsuario = { usuario: usuario, card: cardFav };
 
   if (favoritos == null) {
-    console.log("to aqui 1");
     favoritos = { usuario: [] };
-    favoritos.usuario.push(favoritoDoUsuario);
-    localStorage.setItem("favoritos", JSON.stringify(favoritos));
   } else {
+    for (i = 0; i < favoritos.usuario.length; i++) {
+      let igual =
+        id == favoritos.usuario[i].card.id &&
+        usuario == favoritos.usuario[i].usuario;
+      if (igual) {
+        cont++;
+      }
+    }
+  }
+  if (cont == 0) {
     favoritos.usuario.push(favoritoDoUsuario);
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
   }
@@ -571,7 +580,7 @@ let atualizaTela = (conteudo) => {
                 <button type="button" class="btn btn-primary visitaSite" >Visitar Site</button>
               </a>
               
-              <button type="button" class="btn btn-dark adicionaFavorito" id="${noticia.id}" onclick = "adicionaFavorito(this)"> Favoritar</button>
+              <button type="button" class="btn btn-dark adicionaFavorito" id="${noticia.id}" onclick = "adicionaFavorito(this)" data-dismiss="modal"> Favoritar</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
               
             </div>

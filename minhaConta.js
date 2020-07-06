@@ -31,7 +31,7 @@ let login = () => {
 let encontraFavoritos = () => {
   let favoritos = JSON.parse(localStorage.getItem("favoritos"));
   let usuarioCorrente = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
-  console.log(favoritos);
+
   let favoritosDoUsuario = { favoritos: [] };
 
   for (i = 0; i < favoritos.usuario.length; i++) {
@@ -80,6 +80,7 @@ let atualizaTela = (conteudo) => {
                 <button type="button" class="btn btn-primary visitaSite" >Visitar Site</button>
               </a>
               <button type="button" class="btn btn-secondary adicionaFavorito disabled" id="${noticia.id}" onclick = "adicionaFavorito(this)"> Favoritar</button>
+              <button type="button" class="btn btn-dark adicionaFavorito" id="${noticia.id}" onclick = "removeFavorito(this)" data-dismiss="modal"> Remover</button>
               <button type="button" class="btn btn-dark" data-dismiss="modal">Fechar</button>
             </div>
           </div>
@@ -93,6 +94,33 @@ let atualizaTela = (conteudo) => {
   `;
   }
   tela.innerHTML = texto;
+};
+
+let removeFavorito = (e) => {
+  let id = e.getAttribute("id");
+  let usuario = JSON.parse(sessionStorage.getItem("usuarioCorrente")).login;
+  let favoritos = JSON.parse(localStorage.getItem("favoritos"));
+
+  console.log(id);
+  console.log(favoritos);
+  for (i = 0; i < favoritos.usuario.length; i++) {
+    if (
+      favoritos.usuario[i].card.id == id &&
+      usuario == favoritos.usuario[i].usuario
+    ) {
+      favoritos.usuario.splice(id, 1);
+    }
+  }
+
+  console.log(favoritos);
+
+  if (favoritos.usuario.length > 1) {
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+    encontraFavoritos();
+  } else {
+    localStorage.removeItem("favoritos");
+    location.reload();
+  }
 };
 
 let salvas = []; // Array senhas salvas
@@ -129,7 +157,6 @@ let exibeSenhasSalvas = () => {
   let textoQt = "";
 
   salvas = JSON.parse(localStorage.getItem("senhasSalvas"));
-  console.log(salvas);
 
   let usuarioCorrente = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
 
