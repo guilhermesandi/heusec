@@ -306,9 +306,7 @@ let logado = () => {
     </a>
     
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="#" id = "favoritos">Favoritos</a>
       <a class="dropdown-item" href="minhaConta.html">Minha Conta</a>
-      
       <a class="dropdown-item" href="#" id = "logout">Sair</a>
     </div>
       `;
