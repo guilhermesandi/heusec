@@ -92,15 +92,6 @@ a:hover {
   font-weight: bold;
 }
 
-/*.main h1:before {
-  content: "";
-  display: block;
-  width: 100px;
-  height: 2px;
-  background: #b24d53;
-  margin: 6px 0 2px 1px;
-}*/
-
 .main .title-sobre:before {
   content: "";
   display: block;
