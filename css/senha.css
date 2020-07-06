@@ -81,15 +81,24 @@ a:hover {
 
 .main {
   margin-top: 75px;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 35px;
 }
   
 .main h1 {
-  color: #040505;
+  color: #b24d53;
   font-size: 24px;
   text-transform: uppercase;
+  letter-spacing: .1em;
   font-weight: bold;
+}
+
+.main h1:before {
+  content: "";
+  display: block;
+  width: 325px;
+  height: 2px;
+  background: #b24d53;
+  margin: 6px 0 2px 1px;
 }
   
 .main p {
@@ -111,10 +120,6 @@ a:hover {
   background-color: #131212;
 }
 
-.main h1 {
-  color: white;
-}
-
 ul {
   padding-inline-start: 0px;
 }
@@ -124,7 +129,7 @@ p {
 }
 
 .border-success {
-  border-color: #040505 !important;
+  border-color: #ffffff !important;
 }
 
 .card-header {
@@ -132,7 +137,7 @@ p {
 }
 
 .card-header p {
-  color: white
+  color: #ffffff
 }
 
 .card-body {
