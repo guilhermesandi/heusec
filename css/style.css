@@ -17,24 +17,41 @@ a {
 }
 
 a:hover {
-  color: #b24d53;
+  color: #b24d53 !important;
   text-decoration: none;
+  transition: all .5s ease;
 }
 /* Fim estilos gerais */
 
 /* Header */
 .header {
   background: #040505;
+  border-bottom: 1px solid #b24d53;
 }
 
 .header .navbar {
   background: #040505 !important;
   font-weight: bold;
   padding: 15px 0px;
+  border-bottom: none;
 }
 
-.navbar-dark .navbar-nav .nav-link {
+.header .container {
+  border-bottom: none;
+}
+
+.header .navbar-dark .navbar-nav .nav-link {
   color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .1em;
+  font-size: 14px;
+  line-height: 20px;
+  transition: all .5s ease;
+}
+
+.header .navbar-dark .navbar-nav .active .nav-link {
+  color: #b24d53;
 }
 
 .header .navbar img {
@@ -44,9 +61,21 @@ a:hover {
 .header_area {
   padding: 20px;
 }
+
+.header .dropdown-menu {
+  border-radius: 0px;
+  border: 1px solid #b24d53;
+}
+
+.header .dropdown-menu .dropdown-item {
+  letter-spacing: .1em;
+  font-size: 14px;
+  line-height: 20px;
+}
 /* Header Final */
 
 .carousel-inner img {
+  margin-top: 75px;
   height: 600px;
   padding-bottom: 20px;
 }
@@ -60,23 +89,29 @@ a:hover {
   height: 178.96px;
 }
 
+.main {
+  padding: 0px 30px;
+  padding-bottom: 26px;
+}
+
 .cards {
   padding-bottom: 20px;
   display: flex;
-
   justify-content: center;
 }
+
 .card {
   color: #ffffff;
 }
+
 .card-title {
   justify-content: center;
 }
+
 .adicionaCard {
   text-align: center;
   margin-bottom: 10px;
 }
-
 /* Main Final */
 
 /* Footer */
@@ -85,11 +120,16 @@ a:hover {
   padding-top: 20px;
   padding-bottom: 10px;
   color: #e0e1e7;
+  border-top: 1px solid #b24d53;
+}
+
+.footer .container {
+  border-top: none;
 }
 
 .footer h2 {
   color: #b24d53;
-  font-size: 24px;
+  font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -105,6 +145,33 @@ a:hover {
 
 .footer .contato {
   padding-bottom: 15px;
+}
+
+.footer .sobre h2:before {
+  content: "";
+  display: block;
+  width: 63px;
+  height: 2px;
+  background: #b24d53;
+  margin: 6px 0 2px 1px;
+}
+
+.footer .contato h2:before {
+  content: "";
+  display: block;
+  width: 85px;
+  height: 2px;
+  background: #b24d53;
+  margin: 6px 0 2px 1px;
+}
+
+.footer .redes_sociais h2:before {
+  content: "";
+  display: block;
+  width: 139px;
+  height: 2px;
+  background: #b24d53;
+  margin: 6px 0 2px 1px;
 }
 /* Footer Final */
 
