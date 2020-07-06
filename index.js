@@ -270,6 +270,17 @@ let adicionaCard = () => {
   atualizaTela(artigos.noticia);
 };
 
+let removeCard = (e) => {
+  let id = document.getElementById("txtCardRemove").value;
+  console.log(id);
+
+  let artigos = JSON.parse(localStorage.getItem("artigos"));
+
+  artigos.noticia.splice(id, 1);
+  localStorage.setItem("artigos", JSON.stringify(artigos));
+  atualizaTela(artigos.noticia);
+};
+
 let logado = () => {
   let usuarioCorrente = JSON.parse(sessionStorage.getItem("usuarioCorrente"));
   nome = usuarioCorrente.nome;
@@ -395,7 +406,47 @@ let logado = () => {
 </div>
 </div>
 </div>
-</div>`;
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#retiraCardModal">
+Remover Card
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="retiraCardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Escolha o Card que deseja remover</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span
+          class="input-group-text"
+          id="inputGroup-sizing-default"
+          >ID do card</span
+        >
+      </div>
+      <input
+        id="txtCardRemove"
+        type="text"
+        class="form-control hsimp-level"
+      />
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" id="removeCard" class="btn btn-primary" data-dismiss="modal">Remover</button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
     tela.innerHTML += texto;
   } else {
     for (i = 0; i < logins.length; i++) {
@@ -557,19 +608,6 @@ let adicionaComentario = (e) => {
   localStorage.setItem("comentarios", comentariosLista);
 };
 
-let removeCard = (e) => {
-  let id = e.getAttribute("id");
-  console.log(id);
-  let artigos = JSON.parse(localStorage.getItem("artigos"));
-  for (i = 0; i < artigos.noticia.length; i++) {
-    console.log(artigos.noticia[i].id);
-    if (artigos.noticia[i].id == id) {
-      artigos -= artigos.noticia[i];
-    }
-  }
-  console.log(artigos);
-};
-
 let logout = () => {
   sessionStorage.removeItem("usuarioCorrente");
   document.location.reload();
@@ -639,6 +677,9 @@ onload = () => {
       document
         .getElementById("btn-adiciona-card")
         .addEventListener("click", adicionaCard);
+      document
+        .getElementById("removeCard")
+        .addEventListener("click", removeCard);
     }
     principal();
 
