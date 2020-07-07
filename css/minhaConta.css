@@ -1,3 +1,4 @@
+/* Estilos gerais */
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -16,8 +17,9 @@ a {
 }
 
 a:hover {
-  color: #b24d53;
+  color: #b24d53 !important;
   text-decoration: none;
+  transition: all .5s ease;
 }
 /* Fim estilos gerais */
 
